@@ -119,11 +119,11 @@ header  {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .sidebar { flex: 1 2 400px; }
     .content { flex: 1 1 100%; }
 }
-@media (min-width: 800px) {
+@media (min-width: 600px) {
      header        { order: 1; }
     .sidebar       { order: 2; }
     .content       { order: 3; }

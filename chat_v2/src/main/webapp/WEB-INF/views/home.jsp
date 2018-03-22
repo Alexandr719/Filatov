@@ -9,9 +9,7 @@
 <link href="<c:url value="resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="resources/css/font-awesome-4.7.0/css/font-awesome.css" />" rel="stylesheet">
 <script  type="text/javascript" src="<c:url value="resources/js/jquery-3.3.1.min.js" />"></script>
-<script  src="<c:url value="resources/js/javaScript.js" />"></script>
-<script  src="<c:url value="resources/js/downloadFile.js" />"></script>
-<script  src="<c:url value="resources/js/loginForm.js" />"></script>
+
 
 
 
@@ -146,6 +144,10 @@
 
 
 
+<script  src="<c:url value="resources/js/formChoice.js" />"></script>
+<script  src="<c:url value="resources/js/downloadFile.js" />"></script>
+<script  src="<c:url value="resources/js/loginFormSender.js" />"></script>
+<script  src="<c:url value="resources/js/registrationTest.js" />"></script>
 
 </body>
 </html>

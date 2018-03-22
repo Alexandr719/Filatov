@@ -24,7 +24,16 @@ $(document).ready(function () {
 			
 		
 			success:function(result){
-				alert(result);
+				
+				if(result == "success"){
+					alert("good result");
+					showMainClass();
+				}else{
+					alert("result");
+				}
+				
+				
+			
 			}
 		  });
 		  

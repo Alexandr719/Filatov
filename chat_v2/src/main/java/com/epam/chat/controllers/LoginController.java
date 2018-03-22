@@ -86,9 +86,17 @@ public class LoginController {
 	@RequestMapping(value = "/registration_user", method = RequestMethod.POST,produces="text/html")
 	@ResponseBody
 	public  String registrationUser(@RequestParam("formData") String registrationDate, @ModelAttribute User user) {
+		String registrationResult = "nosuccess";
 		System.out.println("Внутри контроллера реистрации");
 		JsonReader reader = new JsonReader();
 		user = reader.getPerson(registrationDate);
+		
+		if(1 > 0) {
+			// TODO если регитрация прошла успешно
+			registrationResult = "success";
+		}
+		
+		
 		
 		//FactoryDAO dao = FactoryDAO.getDAOFactory();
         //HibernateFactoryDAO dao = new HibernateFactoryDAO();
@@ -103,7 +111,7 @@ public class LoginController {
 		//userDAO.login(user);
 		
 	
-		return "login";
+		return registrationResult;
 	
 	
 
