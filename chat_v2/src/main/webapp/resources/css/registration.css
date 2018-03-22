@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+#form{
+    display: block;
+    width: 40vw;
+    margin: 0 auto;
+    background-color: aqua;
+    border-radius: 10px;
+
+}
+#form li{
+    list-style-type: none;
+}
+#form ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+#form input{
+    margin: 10px 5px;
+}
+
+
+#form .form_head{
+    margin-top: 15vh;
+}
+
+#form .active{
+    background-color: white;
+}
+
+
+.form_login,.form_registration{
+
+    display: flex;
+    flex-direction: column;
+}

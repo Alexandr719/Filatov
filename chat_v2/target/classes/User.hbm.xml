@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22.03.2018 1:28:39 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.epam.chat.elements.User" table="CHATUSERS">
+        <id name="login" type="java.lang.String">
+            <column name="LOGIN" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="surname" type="java.lang.String">
+            <column name="SURNAME" />
+        </property>
+        <property name="telephone" type="java.lang.String">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <many-to-one name="userRole" class="com.epam.chat.elements.UserRole" fetch="join">
+            <column name="ROLENAME" />
+        </many-to-one>
+        <many-to-one name="userStatus" class="com.epam.chat.elements.UserStatus" fetch="join">
+            <column name="STATUSNAME" />
+        </many-to-one>
+        <property name="pathToFoto" type="java.lang.String">
+            <column name="PATHTOFOTO" />
+        </property>
+    </class>
+</hibernate-mapping>
