@@ -36,7 +36,8 @@
    
       <mapping resource="UserRole.hbm.xml" /> 
       <mapping resource="UserStatus.hbm.xml" /> 
-       <mapping resource="User.hbm.xml" /> 
+      <mapping resource="User.hbm.xml" /> 
+      <mapping resource="MessageAction.hbm.xml" /> 
    
    
 

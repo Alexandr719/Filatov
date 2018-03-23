@@ -40,5 +40,15 @@ public class ChatMessage {
 	public void setTextMessage(String textMessage) {
 		this.textMessage = textMessage;
 	}
+
+
+	public MessageAction getAction() {
+		return action;
+	}
+
+
+	public void setAction(MessageAction action) {
+		this.action = action;
+	}
 	
 }

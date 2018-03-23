@@ -39,6 +39,7 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public boolean isLogged(User user) {
+				
 		// TODO Auto-generated method stub
 		return false;
 	}
