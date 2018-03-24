@@ -2,6 +2,7 @@ package com.epam.chat.controllers;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,10 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.epam.chat.dao.*;
 import com.epam.chat.dao.jdbc.hibernate.*;
+import com.epam.chat.elements.ChatMessage;
 import com.epam.chat.elements.MessageAction;
 import com.epam.chat.elements.User;
-import com.epam.chat.elements.UserRole;
-import com.epam.chat.elements.UserStatus;
+
 import com.epam.chat.json.JsonReader;
 
 
@@ -36,14 +37,9 @@ public class LoginController {
 
 		
 		DAOFactory dao = DAOFactory.getDAOFactory();
-		UserDAO userDAO = dao.getUserDAO();
+		//UserDAO userDAO = dao.getUserDAO();
+		
 				
-//		
-//		LocalDateTime timePoint = LocalDateTime.now();
-//		 //user.setTimestamp(timePoint.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
-//			
-//		System.out.println(timePoint.toString());
-//	
 
 		
 		//WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(session.getServletContext());

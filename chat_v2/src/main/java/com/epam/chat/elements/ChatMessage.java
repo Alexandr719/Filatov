@@ -3,9 +3,9 @@ package com.epam.chat.elements;
 
 
 public class ChatMessage {
-	private Long id;
+	private int id;
     private User user;
-    private String timeStamp;
+    private Long timeStamp;
     private MessageAction action;
 	private String textMessage;
  
@@ -16,10 +16,10 @@ public class ChatMessage {
 	}
     
     
-    public Long getId() {
+    public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public User getUser() {
@@ -28,10 +28,10 @@ public class ChatMessage {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public String getTimeStamp() {
+	public Long getTimeStamp() {
 		return timeStamp;
 	}
-	public void setTimeStamp(String timeStamp) {
+	public void setTimeStamp(Long timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 	public String getTextMessage() {

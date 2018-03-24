@@ -1,5 +1,6 @@
 package com.epam.chat.dao.jdbc.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -70,8 +71,19 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public List<User> getAllLogged() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = null;
+	    List users = new ArrayList<User>();
+	    try {
+	      session = HibernateUtil.getSessionFactory().openSession();
+	      users = session.createCriteria(User.class).list();
+	    } catch (Exception e) {
+	      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка вывода всх пользователей", JOptionPane.OK_OPTION);
+	    } finally {
+	      if (session != null && session.isOpen()) {
+	        session.close();
+	      }
+	    }
+	    return users;
 	}
 
 	@Override
