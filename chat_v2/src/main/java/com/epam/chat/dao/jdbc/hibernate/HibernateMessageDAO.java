@@ -1,5 +1,6 @@
 package com.epam.chat.dao.jdbc.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -21,25 +22,11 @@ public class HibernateMessageDAO implements MessageDAO {
 		// TODO :Добавить проверку залогиненых пользователей
 				// TODO :Закинуть роль и статус в файл конфигураций
 		
-		MessageAction action = new MessageAction();
-		action.setNameAction("MESSAGE");
-		action.setDesctiptionAction("Отправил сообщение");
-		ChatMessage message1 = new ChatMessage();
-		message1.setAction(action);
-		message1.setId( 1);
-		message1.setTextMessage("Hello ");
-		message1.setTimeStamp((long) 312312312);
-		User user = new User();
-		user.setLogin("login1");
-		message1.setUser(user);
-		
-		
-				
-				
+						
 				    try {
 				      session = HibernateUtil.getSessionFactory().openSession();
 				      session.beginTransaction();
-				      session.save(message1);
+				      session.save(message);
 				      session.getTransaction().commit();
 				    } catch (Exception e) {
 				      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта MEssage", JOptionPane.OK_OPTION);
@@ -53,8 +40,19 @@ public class HibernateMessageDAO implements MessageDAO {
 
 	@Override
 	public List<ChatMessage> getLast(int count) {
-		// TODO Auto-generated method stub
-		return null;
+		 Session session = null;
+		 List messages = new ArrayList<ChatMessage>();
+		    try {
+		      session = HibernateUtil.getSessionFactory().openSession();
+		      messages = session.createCriteria(ChatMessage.class).list();
+		    } catch (Exception e) {
+		      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка вывода всех сообщений", JOptionPane.OK_OPTION);
+		    } finally {
+		      if (session != null && session.isOpen()) {
+		        session.close();
+		      }
+		    }
+		    return messages;
 	}
 
 }

@@ -36,8 +36,10 @@ public class LoginController {
 		System.out.println("Коннектимся к бд");
 
 		
-		DAOFactory dao = DAOFactory.getDAOFactory();
-		//UserDAO userDAO = dao.getUserDAO();
+//		DAOFactory dao = DAOFactory.getDAOFactory();
+//		MessageDAO messageDAO = dao.getMessageDAO();
+		
+		
 		
 				
 

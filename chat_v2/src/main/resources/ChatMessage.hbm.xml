@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 24.03.2018 20:17:20 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 25.03.2018 0:44:13 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.epam.chat.elements.ChatMessage" table="CHATMESSAGES">
-        <id name="id" type="java.lang.int">
+        <id name="id" type="int">
             <column name="IDMESSAGE" />
-            <generator class="assigned" />
+         	<generator class="increment"/>
         </id>
-        <many-to-one name="user" class="com.epam.chat.elements.User" fetch="join">
+        <property name="userLogin" type="java.lang.String" access="field">
             <column name="USERLOGIN" />
-        </many-to-one>
+        </property>
         <property name="timeStamp" type="java.lang.Long">
             <column name="TIMESTAMP" />
         </property>
         <many-to-one name="action" class="com.epam.chat.elements.MessageAction" fetch="join">
-            <column name="ACTION" />
+            <column name="NAMEACTION" />
         </many-to-one>
         <property name="textMessage" type="java.lang.String">
             <column name="TEXTMESSAGE" />
