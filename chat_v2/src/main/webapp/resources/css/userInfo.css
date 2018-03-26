@@ -1,0 +1,56 @@
+.userInfo{
+    display: none;
+    top: 50px;
+    right: 5px;
+    position: absolute;
+    z-index: 100;
+    color: white;
+    width: 200px;
+    background-color: #2b3b4e;
+
+
+
+}
+
+
+
+
+.mainInfo img{
+    height: 80px;
+    width: 80px;
+}
+
+
+.userInfo .mainInfo span{
+    margin-top: 30px;
+    padding: 0px 10px;
+}
+
+.userInfo .mainInfo{
+padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.userInfo li {
+    margin-left: -20px;
+    list-style-type: none;
+    word-wrap: break-word;
+}
+.userInfo .adminButton{
+
+    border: none;
+    display: block;
+    width: 100px;
+    margin: 0px auto;
+    background-color: #ff7058;
+}
+.userExit{
+    height: 15px;
+    width: 15px;
+    display: block;
+    margin: 0 185px;
+
+}

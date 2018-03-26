@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.epam.chat.dao.UserDAO;
@@ -40,9 +41,8 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public boolean isLogged(User user) {
-				
-		// TODO Auto-generated method stub
 		return false;
+		 
 	}
 
 	@Override
@@ -88,6 +88,12 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public UserRole getRoleByNick(String nick) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User checkLogIN(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -5,8 +5,13 @@
 
 <link href="<c:url value="resources/css/registration.css" />"
 	rel="stylesheet">
-
 <link href="<c:url value="resources/css/main.css" />" rel="stylesheet">
+<link href="<c:url value="resources/css/main.css" />" rel="stylesheet">
+
+<link href="<c:url value="resources/css/addFoto.css" />"
+	rel="stylesheet">
+<link href="<c:url value="resources/css/userInfo.css" />"
+	rel="stylesheet">
 <link href="<c:url value="resources/css/style.css" />" rel="stylesheet">
 <link
 	href="<c:url value="resources/css/font-awesome-4.7.0/css/font-awesome.css" />"
@@ -151,7 +156,39 @@
 
 	</div>
 
+	<div class="userInfo">
 
+		<img src="<c:url value="resources/images/cross-remove-sign.png" />"
+			alt="Выход" class="userExit">
+		<div class="mainInfo">
+			<img src="<c:url value="resources/images/man.png" />"
+				alt="Изображение профиля"> <span>Filatov Alexandr</span>
+		</div>
+
+		<ul>
+			<li>Telephone:3123123123</li>
+			<li>Email:fdsssssssssssssssssssssssssssssssssssssss</li>
+
+		</ul>
+		<button class="adminButton">Забанить</button>
+
+
+
+
+
+
+	</div>
+
+	<div class="formAddFoto">
+
+		<input type="file" name="file" id="file" class="input-file"> <label
+			for="file" class="btn btn-tertiary js-labelFile"> <i
+			class="icon fa fa-check"></i> <span class="js-fileName">Choose
+				a file</span>
+		</label> <a href="#" class="upload_files button">Download image</a>
+		<div class="ajax-reply"></div>
+
+	</div>
 
 
 
@@ -159,6 +196,7 @@
 	<script src="<c:url value="resources/js/downloadFile.js" />"></script>
 	<script src="<c:url value="resources/js/loginFormSender.js" />"></script>
 	<script src="<c:url value="resources/js/registrationTest.js" />"></script>
+	<script src="<c:url value="resources/js/choiseFile.js" />"></script>
 
 </body>
 </html>

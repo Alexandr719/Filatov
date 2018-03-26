@@ -21,8 +21,7 @@ public class HibernateMessageDAO implements MessageDAO {
 		 Session session = null;
 		// TODO :Добавить проверку залогиненых пользователей
 				// TODO :Закинуть роль и статус в файл конфигураций
-		
-						
+							
 				    try {
 				      session = HibernateUtil.getSessionFactory().openSession();
 				      session.beginTransaction();
@@ -40,19 +39,19 @@ public class HibernateMessageDAO implements MessageDAO {
 
 	@Override
 	public List<ChatMessage> getLast(int count) {
-		 Session session = null;
-		 List messages = new ArrayList<ChatMessage>();
-		    try {
-		      session = HibernateUtil.getSessionFactory().openSession();
-		      messages = session.createCriteria(ChatMessage.class).list();
-		    } catch (Exception e) {
-		      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка вывода всех сообщений", JOptionPane.OK_OPTION);
-		    } finally {
-		      if (session != null && session.isOpen()) {
-		        session.close();
-		      }
-		    }
-		    return messages;
+		Session session = null;
+	    List messages = new ArrayList<ChatMessage>();
+	    try {
+	      session = HibernateUtil.getSessionFactory().openSession();
+	      messages = session.createCriteria(ChatMessage.class).list();
+	    } catch (Exception e) {
+	      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка вывода всх пользователей", JOptionPane.OK_OPTION);
+	    } finally {
+	      if (session != null && session.isOpen()) {
+	        session.close();
+	      }
+	    }
+	    return messages;
 	}
 
 }

@@ -1,45 +1,52 @@
 package com.epam.chat.elements;
 
-
+import java.sql.Timestamp;
 
 public class ChatMessage {
 	private int id;
     private String userLogin;
-    private Long timeStamp;
+    private Timestamp timeStamp;
     private MessageAction action;
 	private String textMessage;
  
     
     
-    public ChatMessage() {
-		// TODO Auto-generated constructor stub
-	}
-    
-    
     public int getId() {
 		return id;
 	}
+
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUser() {
+
+
+
+	public String getUserLogin() {
 		return userLogin;
 	}
-	public void setUser(String userLogin) {
+
+
+
+	public void setUserLogin(String userLogin) {
 		this.userLogin = userLogin;
 	}
-	public Long getTimeStamp() {
+
+
+
+	
+
+	public Timestamp getTimeStamp() {
 		return timeStamp;
 	}
-	public void setTimeStamp(Long timeStamp) {
+
+
+
+	public void setTimeStamp(Timestamp timeStamp) {
 		this.timeStamp = timeStamp;
 	}
-	public String getTextMessage() {
-		return textMessage;
-	}
-	public void setTextMessage(String textMessage) {
-		this.textMessage = textMessage;
-	}
+
 
 
 	public MessageAction getAction() {
@@ -47,8 +54,30 @@ public class ChatMessage {
 	}
 
 
+
 	public void setAction(MessageAction action) {
 		this.action = action;
 	}
+
+
+
+	public String getTextMessage() {
+		return textMessage;
+	}
+
+
+
+	public void setTextMessage(String textMessage) {
+		this.textMessage = textMessage;
+	}
+
+
+
+	public ChatMessage() {
+		// TODO Auto-generated constructor stub
+	}
+    
+    
+   
 	
 }

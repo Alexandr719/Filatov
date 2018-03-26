@@ -2,6 +2,8 @@ package com.epam.chat.controllers;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -35,10 +37,6 @@ public class LoginController {
 	public ModelAndView main(HttpSession session) throws SQLException  {
 		System.out.println("Коннектимся к бд");
 
-		
-//		DAOFactory dao = DAOFactory.getDAOFactory();
-//		MessageDAO messageDAO = dao.getMessageDAO();
-		
 		
 		
 				

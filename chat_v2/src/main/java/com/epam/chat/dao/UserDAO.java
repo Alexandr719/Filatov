@@ -10,6 +10,7 @@ public interface UserDAO {
 	void login(User loginingUser);
 
 	boolean isLogged(User user);
+	User checkLogIN(User user);
 
 	void kick(User kickableUser);
 
