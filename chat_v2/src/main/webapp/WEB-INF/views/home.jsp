@@ -73,7 +73,7 @@
 				<li><img src="<c:url value="resources/images/man.png" />"
 					alt="profile_image" class="profile_image"></li>
 				<li id="user_name">Filatov Alexandr</li>
-				<li><img src="<c:url value="resources/images/man.png" />"
+				<li><img src="<c:url value="resources/images/exit.png" />"
 					alt="Exit" id="exit_buttom"></li>
 
 			</ul>
@@ -131,8 +131,40 @@
 					<span class="user_name">Name Surname</span>
 					<div class="online_ball"></div>
 
+					<div class="userInfo">
+
+						<img
+							src="<c:url value="resources/images/cross-remove-sign.png" />"
+							alt="Выход" class="userExit">
+						<div class="mainInfo">
+							<img src="<c:url value="resources/images/man2.png" />"
+								alt="Изображение профиля"> <span>Filatov Alexandr</span>
+						</div>
+
+						<ul>
+							<li>Telephone:3123123123</li>
+							<li>Email:fdsssssssssssssssssssssssssssssssssssssss</li>
+
+						</ul>
+						<button class="adminButton">Забанить</button>
+
+
+
+
+
+
+					</div>
+
+
+
+
 
 				</div>
+
+
+
+
+
 				<div class="user_id">
 					<span class="user_name">Name Surname</span>
 					<div class="online_ball active_ball"></div>
@@ -156,28 +188,8 @@
 
 	</div>
 
-	<div class="userInfo">
-
-		<img src="<c:url value="resources/images/cross-remove-sign.png" />"
-			alt="Выход" class="userExit">
-		<div class="mainInfo">
-			<img src="<c:url value="resources/images/man.png" />"
-				alt="Изображение профиля"> <span>Filatov Alexandr</span>
-		</div>
-
-		<ul>
-			<li>Telephone:3123123123</li>
-			<li>Email:fdsssssssssssssssssssssssssssssssssssssss</li>
-
-		</ul>
-		<button class="adminButton">Забанить</button>
 
 
-
-
-
-
-	</div>
 
 	<div class="formAddFoto">
 
