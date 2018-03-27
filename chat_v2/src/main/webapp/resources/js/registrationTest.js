@@ -1,5 +1,6 @@
 function showMainClass() {
-	  $('#main').show();
 	  $('#form').hide();
+	  $('#main').show();
+	 
 	  
 }

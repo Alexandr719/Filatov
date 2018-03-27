@@ -133,20 +133,21 @@
 
 					<div class="userInfo">
 
-						<img
-							src="<c:url value="resources/images/cross-remove-sign.png" />"
-							alt="Выход" class="userExit">
+						<img src="<c:url value="resources/images/cross-remove-sign.png" />" alt="Выход"
+							class="userExit">
 						<div class="mainInfo">
-							<img src="<c:url value="resources/images/man2.png" />"
-								alt="Изображение профиля"> <span>Filatov Alexandr</span>
+							<img src="<c:url value="resources/images/man.png" />" alt="Изображение профиля"> <span>Filatov
+								Alexandr</span>
 						</div>
 
-						<ul>
-							<li>Telephone:3123123123</li>
-							<li>Email:fdsssssssssssssssssssssssssssssssssssssss</li>
+						<div class="allUsersSpans">
 
-						</ul>
-						<button class="adminButton">Забанить</button>
+							<span>Telephone:3123123123123</span> <span>Email:
+								3123123123123</span>
+
+
+						</div>
+						<button class="adminButton">BANNED</button>
 
 
 
@@ -168,6 +169,30 @@
 				<div class="user_id">
 					<span class="user_name">Name Surname</span>
 					<div class="online_ball active_ball"></div>
+					<div class="userInfo">
+
+						<img src="<c:url value="resources/images/cross-remove-sign.png" />" alt="Выход"
+							class="userExit">
+						<div class="mainInfo">
+							<img src="<c:url value="resources/images/man.png" />" alt="Изображение профиля"> <span>Filatov
+								Alexandr</span>
+						</div>
+
+						<div class="allUsersSpans">
+
+							<span>Telephone:3123123123123</span> <span>Email:
+								3123123123123</span>
+
+
+						</div>
+						<button class="adminButton">BANNED</button>
+
+
+
+
+
+
+					</div>
 
 				</div>
 
