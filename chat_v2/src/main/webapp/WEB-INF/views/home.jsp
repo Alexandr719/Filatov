@@ -65,6 +65,10 @@
 
 	<div id="main">
 
+
+				
+
+
 		<header>
 			<div class="header_chatName">Chat v2</div>
 			<ul>
@@ -127,8 +131,18 @@
 					alt="Users_ico">Users:
 			</div>
 			<div class="sidebar_userlist">
+			
+			
+			<c:forEach var="item" items="${dao.getUserDAO().getAllLogged()}">
+					
+				
+				
+				
+				
+				
+				
 				<div class="user_id">
-					<span class="user_name">Name Surname</span>
+					<span class="user_name">${item.getLogin()}</span>
 					<div class="online_ball"></div>
 
 					<div class="userInfo">
@@ -136,14 +150,14 @@
 						<img src="<c:url value="resources/images/cross-remove-sign.png" />" alt="Выход"
 							class="userExit">
 						<div class="mainInfo">
-							<img src="<c:url value="resources/images/man.png" />" alt="Изображение профиля"> <span>Filatov
-								Alexandr</span>
+							<img src="<c:url value="resources/images/man.png" />" alt="Изображение профиля"> 
+							<span>${item.getName()}   ${item.getSurname()} </span>
 						</div>
 
 						<div class="allUsersSpans">
 
-							<span>Telephone:3123123123123</span> <span>Email:
-								3123123123123</span>
+							<span>Telephone:${item.getTelephone()}</span> 
+							<span>Email: ${item.getEmail()}</span>
 
 
 						</div>
@@ -161,41 +175,13 @@
 
 
 				</div>
+				</c:forEach>
 
 
 
 
 
-				<div class="user_id">
-					<span class="user_name">Name Surname</span>
-					<div class="online_ball active_ball"></div>
-					<div class="userInfo">
-
-						<img src="<c:url value="resources/images/cross-remove-sign.png" />" alt="Выход"
-							class="userExit">
-						<div class="mainInfo">
-							<img src="<c:url value="resources/images/man.png" />" alt="Изображение профиля"> <span>Filatov
-								Alexandr</span>
-						</div>
-
-						<div class="allUsersSpans">
-
-							<span>Telephone:3123123123123</span> <span>Email:
-								3123123123123</span>
-
-
-						</div>
-						<button class="adminButton">BANNED</button>
-
-
-
-
-
-
-					</div>
-
-				</div>
-
+				
 
 
 
