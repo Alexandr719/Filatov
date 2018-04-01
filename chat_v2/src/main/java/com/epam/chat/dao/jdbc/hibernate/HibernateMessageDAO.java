@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 import com.epam.chat.dao.MessageDAO;
 import com.epam.chat.elements.ChatMessage;
@@ -13,7 +14,7 @@ import com.epam.chat.elements.MessageAction;
 import com.epam.chat.elements.User;
 import com.epam.chat.elements.UserRole;
 import com.epam.chat.elements.UserStatus;
-
+@Repository
 public class HibernateMessageDAO implements MessageDAO {
 
 	@Override

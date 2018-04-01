@@ -9,12 +9,13 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.epam.chat.dao.UserDAO;
 import com.epam.chat.elements.User;
 import com.epam.chat.elements.UserRole;
 import com.epam.chat.elements.UserStatus;
-
+@Repository
 public class HibernateUserDAO implements UserDAO {
 
 	@Override

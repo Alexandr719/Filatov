@@ -17,7 +17,8 @@
 	href="<c:url value="resources/css/font-awesome-4.7.0/css/font-awesome.css" />"
 	rel="stylesheet">
 <script type="text/javascript"
-	src="<c:url value="resources/js/jquery-3.3.1.min.js" />"></script>
+	src="<c:url value="resources/js/libraries/jquery-3.3.1.min.js" />"></script>
+	
 
 
 
@@ -113,8 +114,9 @@
 
 			</div>
 			<div class="content_send_message">
-				<form action="#">
+				<form action="send_message">
 					<input type="text"> <input type="submit" value="send">
+					${user.getLogin()}
 				</form>
 
 
