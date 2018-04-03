@@ -14,13 +14,12 @@ import com.epam.chat.test.HelloMessage;
 @Controller
 public class GreetingController {
 	
-	
-	
 
 
-	    @MessageMapping("/hello")
+	 	@MessageMapping("/hello")
 	    @SendTo("/topic/greetings")
 	    public Greeting greeting(HelloMessage message) throws Exception {
+	 		System.out.println("fsdfsdf");
 	        Thread.sleep(3000); // simulated delay
 	        return new Greeting("Hello, " + message.getName() + "!");
 	    }

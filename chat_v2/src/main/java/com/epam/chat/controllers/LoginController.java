@@ -51,7 +51,7 @@ public class LoginController {
 
 		
 		//WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(session.getServletContext());
-		return new ModelAndView("home", "dao", dao);
+		return new ModelAndView("testWeb", "dao", dao);
 	}
 	
 	@RequestMapping(value = "/login_user", method = RequestMethod.POST,produces="text/html")
