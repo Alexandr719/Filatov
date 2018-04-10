@@ -77,7 +77,7 @@
 				<li><div class="header_online_ball"></div></li>
 				<li><img src="<c:url value="resources/images/man.png" />"
 					alt="profile_image" class="profile_image"></li>
-				<li id="user_name">Filatov Alexandr</li>
+				<li id="user_name">Alexandr</li>
 				<li><img src="<c:url value="resources/images/exit.png" />"
 					alt="Exit" id="exit_buttom"></li>
 
@@ -88,24 +88,23 @@
 
 		<div class="content">
 			<div class="content_messagelist">
+			
+			
+			
+				
+				
+				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
+				
 				<div class="message_item">
 					<img src="<c:url value="resources/images/man.png" />"
 						alt="изображение профиля">
-					<div class="message_text">
-						Hello <span class="message_time">23:01</span>
-
-					</div>
-				</div>
-				<div class="message_item">
-					<img src="<c:url value="resources/images/man.png" />"
-						alt="изображение профиля">
-					<div class="message_text">
-						Hello <span class="message_time">23:01</span>
+					<div class="message_text">	${item.getTextMessage()} 
+					<span class="message_time">${item.getTimeStamp()}</span>
 
 					</div>
 				</div>
 
-
+				</c:forEach>
 
 
 
@@ -137,12 +136,7 @@
 			
 			<c:forEach var="item" items="${dao.getUserDAO().getAllLogged()}">
 					
-				
-				
-				
-				
-				
-				
+			
 				<div class="user_id">
 					<span class="user_name">${item.getLogin()}</span>
 					<div class="online_ball"></div>
@@ -161,20 +155,10 @@
 							<span>Telephone:${item.getTelephone()}</span> 
 							<span>Email: ${item.getEmail()}</span>
 
-
 						</div>
 						<button class="adminButton">BANNED</button>
 
-
-
-
-
-
 					</div>
-
-
-
-
 
 				</div>
 				</c:forEach>

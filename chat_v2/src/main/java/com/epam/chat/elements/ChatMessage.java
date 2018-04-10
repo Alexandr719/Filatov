@@ -76,6 +76,14 @@ public class ChatMessage {
 	public ChatMessage() {
 		// TODO Auto-generated constructor stub
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "ChatMessage [userLogin=" + userLogin + ", timeStamp=" + timeStamp + ", textMessage=" + textMessage
+				+ "]";
+	}
     
     
    

@@ -1,6 +1,7 @@
 package com.epam.chat.controllers;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -41,11 +42,27 @@ public class LoginController {
 		
 		DAOFactory dao = DAOFactory.getDAOFactory();
 		
-		UserDAO userDAO= dao.getUserDAO();
-		System.out.println("Запуск");
-		String name = new String();
-		System.out.println(userDAO.getAllLogged());
-//		System.out.println("Коннектимся к бд");
+	
+//		java.util.Date date = new java.util.Date();
+//		java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+//		
+		MessageDAO messageDAO =  dao.getMessageDAO();
+//		ChatMessage message = new ChatMessage();
+//		MessageAction action = new MessageAction();
+//		action.setNameAction("LOGIN");
+//		action.setDesctiptionAction("Пользователь зарегитрировался");
+//		message.setUserLogin("Alexandr");
+//		message.setTimeStamp( timestamp);
+//		message.setTextMessage("Hello guys");
+//		message.setAction(action);
+//		messageDAO.sentMessage(message);
+		
+		
+			System.out.println(messageDAO.getLast(0).get(0).getTimeStamp());
+			java.sql.Timestamp timestamp =messageDAO.getLast(0).get(0).getTimeStamp();
+			
+		
+
 		
 
 	
@@ -54,7 +71,7 @@ public class LoginController {
 
 		
 		//WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(session.getServletContext());
-		return new ModelAndView("testWeb", "dao", name);
+		return new ModelAndView("home", "dao", dao);
 	}
 	
 	@RequestMapping(value = "/login_user", method = RequestMethod.POST,produces="text/html")

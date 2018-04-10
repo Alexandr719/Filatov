@@ -36,7 +36,7 @@ public class DaoImpl {
 		System.out.println(timestamp);
 		ChatMessage message = new ChatMessage();
 		MessageAction action = new MessageAction();
-		action.setNameAction("Login");
+		action.setNameAction("LOGIN");
 		action.setDesctiptionAction("Пользователь зарегитрировался");
 		message.setUserLogin("LOgin");
 		message.setTimeStamp( timestamp);
