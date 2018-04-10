@@ -77,7 +77,7 @@
 				<li><div class="header_online_ball"></div></li>
 				<li><img src="<c:url value="resources/images/man.png" />"
 					alt="profile_image" class="profile_image"></li>
-				<li id="user_name">Filatov</li>
+				<li id="user_name">${sessinoUser.getLogin()}</li>
 				<li><img src="<c:url value="resources/images/exit.png" />"
 					alt="Exit" id="exit_buttom"></li>
 
@@ -88,17 +88,13 @@
 
 		<div class="content">
 			<div class="content_messagelist">
-			
-			
-			
-				
-				
+						
 				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
 				
 				<div class="message_item">
 					<img src="<c:url value="resources/images/man.png" />"
 						alt="изображение профиля">
-					<div class="message_text">	${item.getTextMessage()} 
+					<div class="message_text">${item.getTextMessage()} 
 					<span class="message_time">${item.getTimeStamp()}</span>
 
 					</div>
@@ -107,25 +103,19 @@
 				</c:forEach>
 
 
-
-
-
-
 			</div>
 			<div class="content_send_message">
 				<form action="send_message">
 					<input type="text"> <input type="submit" value="send">
 					${user.getLogin()}
 				</form>
-
-
-
-
-
-
 			</div>
+					
 
 		</div>
+		
+		
+		
 		<div class="sidebar">
 			<div class="sidebar_header">
 				<img src="<c:url value="resources/images/man.png" />"
@@ -165,27 +155,11 @@
 
 
 
-
-
-				
-
-
-
-
-
-
-
 			</div>
 		</div>
 
 
-
-
-
-
 	</div>
-
-
 
 
 	<div class="formAddFoto">

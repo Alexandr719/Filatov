@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,11 +39,14 @@ public class LoginController {
 	//private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView main(HttpSession session) throws SQLException  {
+	public ModelAndView main(ModelMap model) throws SQLException  {
 		
 		DAOFactory dao = DAOFactory.getDAOFactory();
 		
+		User user = new User();
+		//user.setLogin("Alexandr");
 	
+		model.put("sessinoUser",user);
 //		java.util.Date date = new java.util.Date();
 //		java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
 //		
