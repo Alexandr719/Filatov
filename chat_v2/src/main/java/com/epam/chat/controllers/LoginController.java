@@ -39,11 +39,14 @@ public class LoginController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView main(HttpSession session) throws SQLException  {
 		
-		
-		
-		
-		System.out.println("Коннектимся к бд");
 		DAOFactory dao = DAOFactory.getDAOFactory();
+		
+		UserDAO userDAO= dao.getUserDAO();
+		System.out.println("Запуск");
+		String name = new String();
+		System.out.println(userDAO.getAllLogged());
+//		System.out.println("Коннектимся к бд");
+		
 
 	
 		
@@ -51,7 +54,7 @@ public class LoginController {
 
 		
 		//WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(session.getServletContext());
-		return new ModelAndView("testWeb", "dao", dao);
+		return new ModelAndView("testWeb", "dao", name);
 	}
 	
 	@RequestMapping(value = "/login_user", method = RequestMethod.POST,produces="text/html")

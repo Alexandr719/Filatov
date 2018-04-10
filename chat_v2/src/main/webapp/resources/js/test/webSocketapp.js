@@ -29,7 +29,7 @@
 
         function sendName() {
             var name = document.getElementById('name').value;
-            stompClient.send("/app/topic", {}, JSON.stringify({ 'name': name }));
+            stompClient.send("/app/messages", {}, JSON.stringify({ 'name': name }));
         }
 
         function showGreeting(message) {
