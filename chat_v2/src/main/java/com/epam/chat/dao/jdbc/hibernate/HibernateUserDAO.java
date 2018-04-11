@@ -6,7 +6,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -66,21 +65,8 @@ public class HibernateUserDAO implements UserDAO {
 			 result = true;
 		 }
 		
-		 
-       
-		
-		
-		
-		
-		
 		return result;
-		
-		
-		
-		
-		
-		
-		 
+	
 	}
 
 	@Override

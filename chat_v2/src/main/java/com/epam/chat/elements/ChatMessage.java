@@ -1,11 +1,12 @@
 package com.epam.chat.elements;
 
-import java.sql.Timestamp;
+
+import java.util.Date;
 
 public class ChatMessage {
 	private int id;
     private String userLogin;
-    private Timestamp timeStamp;
+    private Date timeStamp;
     private MessageAction action;
 	private String textMessage;
  
@@ -37,13 +38,20 @@ public class ChatMessage {
 
 	
 
-	public Timestamp getTimeStamp() {
+
+
+
+
+
+
+
+	public Date getTimeStamp() {
 		return timeStamp;
 	}
 
 
 
-	public void setTimeStamp(Timestamp timeStamp) {
+	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 

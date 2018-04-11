@@ -39,7 +39,7 @@ public class DaoImpl {
 		action.setNameAction("LOGIN");
 		action.setDesctiptionAction("Пользователь зарегитрировался");
 		message.setUserLogin("LOgin");
-		message.setTimeStamp( timestamp);
+		//message.setTimeStamp( timestamp);
 		message.setTextMessage("Hello guis3");
 		message.setAction(action);
 		messageDAO.sentMessage(message);

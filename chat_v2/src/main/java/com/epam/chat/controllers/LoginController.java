@@ -7,7 +7,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
+
 
 
 import org.springframework.stereotype.Controller;
@@ -47,23 +47,22 @@ public class LoginController {
 		user.setLogin("Alexandr");
 	
 		model.put("sessinoUser",user);
-//		java.util.Date date = new java.util.Date();
-//		java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
-//		
+		java.util.Date date = new java.util.Date();
+		
+		
 		MessageDAO messageDAO =  dao.getMessageDAO();
-//		ChatMessage message = new ChatMessage();
-//		MessageAction action = new MessageAction();
-//		action.setNameAction("LOGIN");
-//		action.setDesctiptionAction("Пользователь зарегитрировался");
-//		message.setUserLogin("Alexandr");
-//		message.setTimeStamp( timestamp);
-//		message.setTextMessage("Hello guys");
-//		message.setAction(action);
-//		messageDAO.sentMessage(message);
+		ChatMessage message = new ChatMessage();
+		MessageAction action = new MessageAction();
+		action.setNameAction("LOGIN");
+		action.setDesctiptionAction("Пользователь зарегитрировался");
+		message.setUserLogin("Alexandr");
+		message.setTimeStamp(date);
+		message.setTextMessage("Hello guys");
+		message.setAction(action);
+		messageDAO.sentMessage(message);
+		System.out.println("Hello");
+		System.out.println(messageDAO.getLast(0).get(0).getTimeStamp());
 		
-		
-			System.out.println(messageDAO.getLast(0).get(0).getTimeStamp());
-			java.sql.Timestamp timestamp =messageDAO.getLast(0).get(0).getTimeStamp();
 			
 		
 

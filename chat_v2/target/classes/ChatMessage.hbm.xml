@@ -11,7 +11,7 @@
         <property name="userLogin" type="java.lang.String" access="field">
             <column name="USERLOGIN" />
         </property>
-        <property name="timeStamp" type="java.sql.Timestamp">
+        <property name="timeStamp" type="java.util.Date">
             <column name="TIMESTAMP" />
         </property>
         <many-to-one name="action" class="com.epam.chat.elements.MessageAction" fetch="join">

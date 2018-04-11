@@ -87,7 +87,7 @@
 		</header>
 
 		<div class="content">
-			<div class="content_messagelist">
+			<div class="content_messagelist" id="content_messageList">
 						
 				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
 				
