@@ -1,35 +1,33 @@
 package com.epam.chat.controllers;
 
-import java.sql.SQLException;
 
-import javax.servlet.http.HttpSession;
 
+import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
 
-import com.epam.chat.dao.DAOFactory;
-import com.epam.chat.elements.User;
+
+
+import com.epam.chat.test.Greeting;
+import com.epam.chat.test.HelloMessage;
+
 
 @Controller
 public class MessageController {
 	
 
-	@RequestMapping(value = "/send_message", method = RequestMethod.GET)
-	public ModelAndView main(HttpSession session) throws SQLException  {
-		System.out.println("В контроллере сообщений");
-		User user = new User();
-		user.setLogin("LoginUser");
-			
+
+	 	@MessageMapping("/messages")
+	    @SendTo("/topic/greetings")
+	    public Greeting greeting(HelloMessage message) throws Exception {
+	 		Thread.sleep(1000); 
+	 		ObjectMapper mapper = new ObjectMapper();
+	 		String jsonInString = mapper.writeValueAsString(message);
+	        System.out.println(jsonInString);
+	        return new Greeting(jsonInString);
+	    }
 	
-		
-				
 
-		
-		
-		return new ModelAndView("home", "user",user);
-	}
-
+	
 }

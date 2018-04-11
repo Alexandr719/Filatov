@@ -44,7 +44,7 @@ public class LoginController {
 		DAOFactory dao = DAOFactory.getDAOFactory();
 		
 		User user = new User();
-		//user.setLogin("Alexandr");
+		user.setLogin("Alexandr");
 	
 		model.put("sessinoUser",user);
 //		java.util.Date date = new java.util.Date();

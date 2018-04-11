@@ -101,17 +101,17 @@
 				</div>
 
 				</c:forEach>
+					<p id="response"></p>
 
 
 			</div>
 			<div class="content_send_message">
-				<form action="send_message">
-					<input type="text"> <input type="submit" value="send">
-					${user.getLogin()}
-				</form>
+				
+					<input type="text" id="message" /> 
+					<button type="submit" onclick="sendMessage();" >Send</button>
+			
 			</div>
-					
-
+		
 		</div>
 		
 		
@@ -180,6 +180,14 @@
 	<script src="<c:url value="resources/js/loginFormSender.js" />"></script>
 	<script src="<c:url value="resources/js/registrationTest.js" />"></script>
 	<script src="<c:url value="resources/js/choiseFile.js" />"></script>
+	
+	
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+     <script type="text/javascript"	src="<c:url value="resources/js/test/webSocketapp.js" />"></script>
+	
+	
+	
 
 </body>
 </html>

@@ -185,8 +185,8 @@ header  {
     padding: 10px;
 
 }
-.content_send_message  input[type="submit"]{
-color:  #ff7058;
+.content_send_message  button{
+	color:  #ff7058;
     font-size: 1.2em;
     border: 0;
     background-color: #2b3b4e;
