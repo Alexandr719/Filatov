@@ -31,6 +31,10 @@ function showMainClass() {
 	  
 }
 
+
+
+
+
 function showRegistrationClass() {
 	 $('#main').hide();  
 	 $('#form').show();

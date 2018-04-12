@@ -48,20 +48,19 @@ public class LoginController {
 	
 		model.put("sessinoUser",user);
 		java.util.Date date = new java.util.Date();
-		
-		
+				
 		MessageDAO messageDAO =  dao.getMessageDAO();
 		ChatMessage message = new ChatMessage();
 		MessageAction action = new MessageAction();
 		action.setNameAction("LOGIN");
 		action.setDesctiptionAction("Пользователь зарегитрировался");
-		message.setUserLogin("Alexandr");
+		message.setUser(user);
 		message.setTimeStamp(date);
-		message.setTextMessage("Hello guys");
+		message.setTextMessage("Hello guys7777");
 		message.setAction(action);
 		messageDAO.sentMessage(message);
 		System.out.println("Hello");
-		System.out.println(messageDAO.getLast(0).get(0).getTimeStamp());
+		System.out.println(messageDAO.getLast(0).get(0).getTimeHMS());
 		
 			
 		

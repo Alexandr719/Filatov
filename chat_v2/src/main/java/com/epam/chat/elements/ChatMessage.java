@@ -1,11 +1,12 @@
 package com.epam.chat.elements;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ChatMessage {
 	private int id;
-    private String userLogin;
+    private User user;
     private Date timeStamp;
     private MessageAction action;
 	private String textMessage;
@@ -17,32 +18,9 @@ public class ChatMessage {
 	}
 
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
-	public String getUserLogin() {
-		return userLogin;
-	}
-
-
-
-	public void setUserLogin(String userLogin) {
-		this.userLogin = userLogin;
-	}
-
-
-
-	
-
-
-
-
-
-
 
 
 	public Date getTimeStamp() {
@@ -60,7 +38,6 @@ public class ChatMessage {
 	public MessageAction getAction() {
 		return action;
 	}
-
 
 
 	public void setAction(MessageAction action) {
@@ -89,11 +66,31 @@ public class ChatMessage {
 
 	@Override
 	public String toString() {
-		return "ChatMessage [userLogin=" + userLogin + ", timeStamp=" + timeStamp + ", textMessage=" + textMessage
+		return "ChatMessage [userLogin=" + user + ", timeStamp=" + timeStamp + ", textMessage=" + textMessage
 				+ "]";
 	}
+
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
     
-    
+    public String getTimeHMS() {
+    	SimpleDateFormat sm = new SimpleDateFormat("HH:mm:ss"); 	
+    	String strDate = sm.format(this.timeStamp);
+    	
+		return strDate;
+    	
+    	
+    	
+    }
    
 	
 }

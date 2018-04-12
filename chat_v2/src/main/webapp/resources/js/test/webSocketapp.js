@@ -8,16 +8,12 @@ function insetIntoHtml(messageText, messageTime)	{
 	var message_image = $('<img alt="изображение профиля">');
 	var message_text =  $('<div class="message_text">');
 	var message_time = $('<span class="message_time">');
-	message_text.text(messageText);
-	message_time.text(messageTime.getFullYear() + '-'
-			+ (messageTime.getMonth()+1) + '-' 
-			+  messageTime.getDate()+ ' '
-			+  messageTime.getHours() + ':' 
-			+  messageTime.getMinutes() + ':' 
-			+  messageTime.getSeconds())+ '.'
-			+  messageTime.getMilliseconds();
 	
-
+	message_text.text(messageText);
+	message_time.text(messageTime.getHours() + ':' 
+			+  messageTime.getMinutes() + ':' 
+			+  messageTime.getSeconds());
+	
 	message_text.append(message_time);
 	message_item.append(message_image) ;
 	message_item.append(message_text);

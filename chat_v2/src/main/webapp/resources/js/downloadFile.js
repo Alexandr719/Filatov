@@ -1,6 +1,6 @@
 // Переменная куда будут располагаться данные файлов
 $(document).ready(function () {
-	
+	alert("hello");
 var files;
 
 $('#image_file').change(function(){

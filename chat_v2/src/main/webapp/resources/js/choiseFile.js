@@ -1,7 +1,5 @@
 (function() {
-
     'use strict';
-
     $('.input-file').each(function() {
         var $input = $(this),
             $label = $input.next('.js-labelFile'),

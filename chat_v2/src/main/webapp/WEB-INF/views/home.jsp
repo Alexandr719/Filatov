@@ -92,10 +92,10 @@
 				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
 				
 				<div class="message_item">
-					<img src="<c:url value="resources/images/man.png" />"
+					<img src="<c:url value="${item.getUser().getPathToFoto()} " />"
 						alt="изображение профиля">
 					<div class="message_text">${item.getTextMessage()} 
-					<span class="message_time">${item.getTimeStamp()}</span>
+					<span class="message_time">${item.getTimeHMS()}</span>
 
 					</div>
 				</div>
@@ -164,9 +164,9 @@
 
 	<div class="formAddFoto">
 
-		<input type="file" name="file" id="file" class="input-file"> <label
-			for="file" class="btn btn-tertiary js-labelFile"> <i
-			class="icon fa fa-check"></i> <span class="js-fileName">Choose
+		<input type="file" name="file" id="file" class="input-file">
+		 <label	for="file" class="btn btn-tertiary js-labelFile">
+		  <i	class="icon fa fa-check"></i> <span class="js-fileName">Choose
 				a file</span>
 		</label> <a href="#" class="upload_files button">Download image</a>
 		<div class="ajax-reply"></div>

@@ -38,7 +38,7 @@ public class DaoImpl {
 		MessageAction action = new MessageAction();
 		action.setNameAction("LOGIN");
 		action.setDesctiptionAction("Пользователь зарегитрировался");
-		message.setUserLogin("LOgin");
+		//message.setUserLogin("LOgin");
 		//message.setTimeStamp( timestamp);
 		message.setTextMessage("Hello guis3");
 		message.setAction(action);
