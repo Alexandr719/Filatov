@@ -29,7 +29,7 @@ public class ChatMessage {
 
 
 
-	public void setTimeStamp(Date timeStamp) {
+	public void setTimeStamp(Date timeStamp) { 
 		this.timeStamp = timeStamp;
 	}
 

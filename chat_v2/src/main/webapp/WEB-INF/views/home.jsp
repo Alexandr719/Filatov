@@ -163,20 +163,29 @@
 
 
 	<div class="formAddFoto">
-
-		<input type="file" name="file" id="file" class="input-file">
+<form id="upload-file-form">
+   <label for="upload-file-input">Upload your file:</label>
+  <input id="upload-file-input" type="file" name="uploadfile" accept="*" />
+  <button id='downloadFile' >Download</button> 
+  
+  <!-- <input type="file" name="uploadfile" id="file" class="input-file" accept="*">
 		 <label	for="file" class="btn btn-tertiary js-labelFile">
 		  <i	class="icon fa fa-check"></i> <span class="js-fileName">Choose
 				a file</span>
-		</label> <a href="#" class="upload_files button">Download image</a>
+		</label> <a  class="upload_files button" >Download image</a>
 		<div class="ajax-reply"></div>
-
+   -->
+  
+  
+  
+  
+</form>
 	</div>
 
 
-
+    <script type="text/javascript"	src="<c:url value="resources/js/test/fileUploader.js" />"></script>
 	<script src="<c:url value="resources/js/formChoice.js" />"></script>
-	<script src="<c:url value="resources/js/downloadFile.js" />"></script>
+	<%-- <script src="<c:url value="resources/js/downloadFile.js" />"></script> --%>
 	<script src="<c:url value="resources/js/loginFormSender.js" />"></script>
 	<script src="<c:url value="resources/js/registrationTest.js" />"></script>
 	<script src="<c:url value="resources/js/choiseFile.js" />"></script>
@@ -185,6 +194,7 @@
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
      <script type="text/javascript"	src="<c:url value="resources/js/test/webSocketapp.js" />"></script>
+  
 	
 	
 	
