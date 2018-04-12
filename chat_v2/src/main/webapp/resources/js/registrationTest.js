@@ -4,12 +4,7 @@ function showMainClass() {
 	  $('.userInfo').hide();
 	  $('.formAddFoto').hide();
 	  
-	  $("#downloadFile").click(function() {
-		  
-		  uploadImageFile();
-		  
-		});
-	  
+	 
 	  
 	  $('.profile_image').click(function() {
 			$('.formAddFoto').show();

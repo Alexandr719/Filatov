@@ -1,11 +1,10 @@
 function uploadImageFile(){
 	
+	if($("#file")[0].files[0]== null){
+		alert("Choose file");
+	}else{
 	
-	alert("gooo!");
-	
-	
-	
-	
+			
 	 $.ajax({
 		    url: "uploadFile",
 		    type: "POST",
@@ -25,4 +24,5 @@ function uploadImageFile(){
 		  });
 	
 	alert("good bye!");
+}
 }

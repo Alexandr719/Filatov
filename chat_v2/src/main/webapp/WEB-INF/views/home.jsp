@@ -164,17 +164,14 @@
 
 	<div class="formAddFoto">
 <form id="upload-file-form">
-   <label for="upload-file-input">Upload your file:</label>
-  <input id="upload-file-input" type="file" name="uploadfile" accept="*" />
-  <button id='downloadFile' >Download</button> 
-  
-  <!-- <input type="file" name="uploadfile" id="file" class="input-file" accept="*">
+   
+   <input type="file" name="uploadfile" id="file" class="input-file" accept="image/*">
 		 <label	for="file" class="btn btn-tertiary js-labelFile">
 		  <i	class="icon fa fa-check"></i> <span class="js-fileName">Choose
 				a file</span>
-		</label> <a  class="upload_files button" >Download image</a>
+		</label> <a  class="upload_files button"   >Download image</a>
 		<div class="ajax-reply"></div>
-   -->
+   
   
   
   
