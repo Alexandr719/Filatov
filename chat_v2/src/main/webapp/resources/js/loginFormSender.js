@@ -28,8 +28,13 @@ $(document).ready(function () {
 				if(result == "success"){
 					location.reload();
 				
-				}else{
+				}else if(result == "badpassword") {
+					alert("bad password");
+				}else if(result == "badlogin"){
 					alert("login is used");
+				} 
+				else{
+					alert("error");
 				}
 				
 				

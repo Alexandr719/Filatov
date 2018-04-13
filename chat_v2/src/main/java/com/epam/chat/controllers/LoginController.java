@@ -79,18 +79,30 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login_user", method = RequestMethod.POST,produces="text/html")
 	@ResponseBody
-	public  String loginUser(@RequestParam("formData") String loginDate) {
+	public  String loginUser(@RequestParam("formData") String loginDate,User user) {
 		System.out.println("Внутри контроллера реистрации");
-	    JsonReader reader = new JsonReader();
-		reader.getPerson(loginDate);
-		return "login";
+		String loginResult = "error";
+		JsonReader reader = new JsonReader();
+	    DAOFactory dao = DAOFactory.getDAOFactory();
+		UserDAO userDAO = dao.getUserDAO();
+		user = reader.getPerson(loginDate);
+	    if(userDAO.checkLogIN(user) != null) {
+	    	user = userDAO.checkLogIN(user);
+	    	loginResult = "success";
+	    }else {
+	    	loginResult = "badpassword";
+	    }
+	    
+	    
+		
+		return loginResult;
 	}
 	
 	
 	@RequestMapping(value = "/registration_user", method = RequestMethod.POST,produces="text/html")
 	@ResponseBody
 	public  String registrationUser(@RequestParam("formData") String registrationDate, @ModelAttribute User user,ModelMap model) {
-		String registrationResult = "nosuccess";
+		String registrationResult = "error";
 	
 		JsonReader reader = new JsonReader();
 		user = reader.getPerson(registrationDate);
@@ -99,7 +111,7 @@ public class LoginController {
 		UserDAO userDAO = dao.getUserDAO();
 		if(userDAO.isLogged(user)){
 			System.out.println("Пользователь с данным ником зарегистрирован");
-			
+			registrationResult = "badlogin";
 			
 		}else {
 			userDAO.login(user);
@@ -109,21 +121,8 @@ public class LoginController {
 	
 		}
 		
-			
-		
-		
-		//FactoryDAO dao = FactoryDAO.getDAOFactory();
-        //HibernateFactoryDAO dao = new HibernateFactoryDAO();
-        //UserDAO  userDAO = dao.getUserDAO();
-		//UserDAO userDAO = dao.getUserDAO();
-		
-		
+	    System.out.println(user);
 	
-//		new FactoryDAO();
-//		UserDAO userDAO = FactoryDAO.getInstance().getUserDAO();
-		System.out.println(user);
-		//userDAO.login(user);
-		
 	
 		return registrationResult;
 

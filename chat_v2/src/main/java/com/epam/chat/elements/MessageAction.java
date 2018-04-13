@@ -7,6 +7,9 @@ public class MessageAction {
 	public MessageAction() {
 		// TODO Auto-generated constructor stub
 	}
+	public MessageAction(String nameAction,String desctiptionAction) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getNameAction() {
 		return nameAction;

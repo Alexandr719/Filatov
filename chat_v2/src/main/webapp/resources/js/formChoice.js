@@ -14,15 +14,17 @@ $(document).ready(function() {
 		
 		
 	}else{
-		
-		showRegistrationClass();
-		
-		
+				showRegistrationClass();
+			
 	}
 	
 	
-	
-	
+		
+	 $('#message').keypress(function(event) {
+	        if (event.keyCode == 13) {
+	        	sendMessage();
+	        }
+	    });
 	
 		
 	

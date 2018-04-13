@@ -29,7 +29,7 @@ public class HibernateMessageDAO implements MessageDAO {
 				      session.save(message);
 				      session.getTransaction().commit();
 				    } catch (Exception e) {
-				      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта MEssage", JOptionPane.OK_OPTION);
+				      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта Message", JOptionPane.OK_OPTION);
 				    } finally {
 				      if (session != null && session.isOpen()) {
 				        session.close();

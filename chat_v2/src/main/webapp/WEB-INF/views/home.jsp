@@ -118,7 +118,7 @@
 		
 		<div class="sidebar">
 			<div class="sidebar_header">
-				<img src="<c:url value="resources/images/man.png" />"
+				<img src="<c:url value="resources/images/team.png" />"
 					alt="Users_ico">Users:
 			</div>
 			<div class="sidebar_userlist">
