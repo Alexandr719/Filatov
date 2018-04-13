@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -26,16 +28,18 @@ public class FileUploadController {
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<?> uploadFile(
-	    @RequestParam("uploadfile") MultipartFile uploadfile) {
-	  System.out.println("nice");
-	  try {
-	    // Get the filename and build the local file path (be sure that the 
-	    // application have write permissions on such directory)
+	    @RequestParam("uploadfile") MultipartFile uploadfile,  HttpServletRequest request) {
+	try {
+	    
 	    String filename = uploadfile.getOriginalFilename();
-	    String directory = "D:\\Filatov";
-	    String filepath = Paths.get(directory, filename).toString();
+	    String directory = File.separator+"resources"+File.separator+"images"+File.separator+"userImages"+File.separator+"777";
+	    String realPathtoUploads =  request.getSession().getServletContext().getRealPath(directory);
+	    System.out.println(realPathtoUploads);
+	    String filepath = Paths.get(realPathtoUploads, filename).toString();
 	    
 	    // Save the file locally
+	    File uploaderFile = new File(realPathtoUploads);
+	    uploaderFile.mkdir();
 	    BufferedOutputStream stream =
 	        new BufferedOutputStream(new FileOutputStream(new File(filepath)));
 	    stream.write(uploadfile.getBytes());

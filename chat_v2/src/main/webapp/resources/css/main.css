@@ -126,8 +126,8 @@ header  {
  }
  @media (min-width: 600px) {
      header        { order: 1; }
-    .sidebar       { order: 2; }
-    .content       { order: 3; }
+    .sidebar       { order: 3; }
+    .content       { order: 2; }
     .footer        { order: 4; }
 } 
 .sidebar_header img{

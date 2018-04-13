@@ -23,7 +23,7 @@ public class HibernateUserDAO implements UserDAO {
 		// TODO :Добавить проверку залогиненых пользователей
 		// TODO :Закинуть роль и статус в файл конфигураций
 		UserRole role = new UserRole("USER", "Роль пользователя");
-		UserStatus status = new UserStatus("ONLINE","Пользоватeль в сети");
+		UserStatus status = new UserStatus("ONLINE","Пользователь в сети");
 		loginingUser.setUserRole(role);
 		loginingUser.setUserStatus(status);
 		    try {

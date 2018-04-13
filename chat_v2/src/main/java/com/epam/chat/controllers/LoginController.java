@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.epam.chat.dao.*;
@@ -33,7 +34,7 @@ import com.epam.chat.json.JsonReader;
 
 
 @Controller
-@SessionAttributes(types = User.class)
+@SessionAttributes("sessinoUser")
 public class LoginController {
 	
 	//private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
@@ -46,7 +47,7 @@ public class LoginController {
 		User user = new User();
 		user.setLogin("Alexandr");
 	
-		model.put("sessinoUser",user);
+		//model.put("sessinoUser",user);
 		java.util.Date date = new java.util.Date();
 				
 		MessageDAO messageDAO =  dao.getMessageDAO();
@@ -58,7 +59,7 @@ public class LoginController {
 		message.setTimeStamp(date);
 		message.setTextMessage("Hello guys7777");
 		message.setAction(action);
-		messageDAO.sentMessage(message);
+		//messageDAO.sentMessage(message);
 		System.out.println("Hello");
 		System.out.println(messageDAO.getLast(0).get(0).getTimeHMS());
 		
@@ -88,23 +89,27 @@ public class LoginController {
 	
 	@RequestMapping(value = "/registration_user", method = RequestMethod.POST,produces="text/html")
 	@ResponseBody
-	public  String registrationUser(@RequestParam("formData") String registrationDate, @ModelAttribute User user) {
+	public  String registrationUser(@RequestParam("formData") String registrationDate, @ModelAttribute User user,ModelMap model) {
 		String registrationResult = "nosuccess";
-		System.out.println("Внутри контроллера реистрации");
+	
 		JsonReader reader = new JsonReader();
 		user = reader.getPerson(registrationDate);
-		
+	
 		DAOFactory dao = DAOFactory.getDAOFactory();
 		UserDAO userDAO = dao.getUserDAO();
-		userDAO.login(user);
-		
-		
-		
-		if(1 > 0) {
-			// TODO если регитрация прошла успешно
+		if(userDAO.isLogged(user)){
+			System.out.println("Пользователь с данным ником зарегистрирован");
+			
+			
+		}else {
+			userDAO.login(user);
 			registrationResult = "success";
+			model.put("sessinoUser",user);
+			
+	
 		}
 		
+			
 		
 		
 		//FactoryDAO dao = FactoryDAO.getDAOFactory();
@@ -121,8 +126,29 @@ public class LoginController {
 		
 	
 		return registrationResult;
-	
-	
 
 }
+	
+	@RequestMapping(value = "/exit", method = RequestMethod.POST,produces="text/html")
+	@ResponseBody
+	public  void exitUser(SessionStatus sessionStatus,ModelMap model) {
+		
+		
+		DAOFactory dao = DAOFactory.getDAOFactory();
+		UserDAO userDAO = dao.getUserDAO();
+		User logoutUser = (User) model.get("sessinoUser");
+		userDAO.logout(logoutUser);
+		sessionStatus.setComplete(); 
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

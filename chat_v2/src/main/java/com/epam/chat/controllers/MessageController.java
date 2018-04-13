@@ -20,7 +20,6 @@ public class MessageController {
 	 	@MessageMapping("/messages")
 	    @SendTo("/topic/greetings")
 	    public Greeting greeting(ChatMessage message) throws Exception {
-	 		Thread.sleep(1000); 
 	 		ObjectMapper mapper = new ObjectMapper();
 	 		java.util.Date date = new java.util.Date();
 			message.setTimeStamp(date);

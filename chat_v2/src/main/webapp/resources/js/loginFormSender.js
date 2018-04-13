@@ -26,10 +26,10 @@ $(document).ready(function () {
 			success:function(result){
 				
 				if(result == "success"){
-					alert("good result");
-					showMainClass();
+					location.reload();
+				
 				}else{
-					alert("result");
+					alert("login is used");
 				}
 				
 				

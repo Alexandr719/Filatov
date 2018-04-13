@@ -182,10 +182,10 @@
 
     <script type="text/javascript"	src="<c:url value="resources/js/test/fileUploader.js" />"></script>
 	<script src="<c:url value="resources/js/formChoice.js" />"></script>
-	<%-- <script src="<c:url value="resources/js/downloadFile.js" />"></script> --%>
 	<script src="<c:url value="resources/js/loginFormSender.js" />"></script>
 	<script src="<c:url value="resources/js/registrationTest.js" />"></script>
 	<script src="<c:url value="resources/js/choiseFile.js" />"></script>
+	<script src="<c:url value="resources/js/exitButton.js" />"></script>
 	
 	
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
