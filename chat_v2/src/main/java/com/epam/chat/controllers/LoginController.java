@@ -79,16 +79,18 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login_user", method = RequestMethod.POST,produces="text/html")
 	@ResponseBody
-	public  String loginUser(@RequestParam("formData") String loginDate,User user) {
-		System.out.println("Внутри контроллера реистрации");
-		String loginResult = "error";
+	public  String loginUser(@RequestParam("formData") String loginDate,User user, ModelMap model) {
+		System.out.println("Inside login controller");
+		String loginResult = "error";		
 		JsonReader reader = new JsonReader();
 	    DAOFactory dao = DAOFactory.getDAOFactory();
 		UserDAO userDAO = dao.getUserDAO();
 		user = reader.getPerson(loginDate);
 	    if(userDAO.checkLogIN(user) != null) {
+	    	System.out.println("нет такого пользователя");
 	    	user = userDAO.checkLogIN(user);
 	    	loginResult = "success";
+	    	model.put("sessinoUser",user);
 	    }else {
 	    	loginResult = "badpassword";
 	    }

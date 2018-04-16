@@ -25,10 +25,8 @@ function connect() {
 
 	var socket = new SockJS('/chat/messages');
 	stompClient = Stomp.over(socket);
-	console.log("In connect2");
 	stompClient.connect({}, function(frame) {
-		console.log('Connected: ' + frame);
-		stompClient.subscribe('/topic/greetings', function(greeting) {
+		    stompClient.subscribe('/topic/greetings', function(greeting) {
 			showGreeting(JSON.parse(greeting.body).content);
 		});
 	});

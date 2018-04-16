@@ -48,3 +48,11 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
 }
+
+
+#errorLoginForm{
+	
+	color:red;
+	text-align: center;
+    display: none;
+}

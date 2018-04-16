@@ -1,6 +1,12 @@
 $(document).ready(function () {
 	
+	
+
+	
 	$( ".form_submit" ).submit(function( event ) {
+		
+		
+		
 		  event.preventDefault();
 		  
 		  var dataFromForm = new FormData(this);
@@ -26,12 +32,20 @@ $(document).ready(function () {
 			success:function(result){
 				
 				if(result == "success"){
+					
+					
+					
 					location.reload();
 				
 				}else if(result == "badpassword") {
-					alert("bad password");
+					
+					$( "#errorLoginForm").text("bad password");
+					$( "#errorLoginForm").css( "display", "block" );
+					
+				
 				}else if(result == "badlogin"){
-					alert("login is used");
+					$( "#errorLoginForm").text("bad login");
+					$( "#errorLoginForm").css( "display", "block" );
 				} 
 				else{
 					alert("error");
