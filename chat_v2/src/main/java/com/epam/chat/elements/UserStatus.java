@@ -3,7 +3,7 @@ package com.epam.chat.elements;
 public class UserStatus {
 	public String nameStatus;
 	public String descriptionStatus;
-	
+
 	public UserStatus() {
 		// TODO Auto-generated constructor stub
 	}

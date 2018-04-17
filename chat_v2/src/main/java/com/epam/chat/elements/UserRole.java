@@ -1,7 +1,7 @@
 package com.epam.chat.elements;
 
 public class UserRole {
-	
+
 	public String getNameRole() {
 		return nameRole;
 	}
@@ -20,7 +20,7 @@ public class UserRole {
 
 	public String nameRole;
 	public String descriptionRole;
-	
+
 	public UserRole(String nameRole, String descriptionRole) {
 		super();
 		this.nameRole = nameRole;
@@ -30,5 +30,5 @@ public class UserRole {
 	public UserRole() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 }

@@ -39,11 +39,11 @@
 		<form class="form_login form_submit " metod="POST" action="login_user"
 			enctype="multipart/form-data">
 
-			<input name="login" type="text" placeholder="Login" /> <input
-				name="password" type="password" placeholder="Password" />
+			<input name="login" type="text" placeholder="Login" required  /> <input
+				name="password" type="password" placeholder="Password" required  />
 				
 				
-				 <input		type="submit" value="Login">
+				 <input		type="submit" value="Get started">
 
 		</form>
 
@@ -51,13 +51,17 @@
 
 		<form class="form_registration form_submit" metod="POST"
 			action="registration_user" enctype="multipart/form-data">
-			<input name="login" type="text" placeholder="Login" /> <input
-				name="password" type="password" placeholder="Password" /> <input
-				name="name" type="text" placeholder="Name" /> <input name="surname"
-				type="text" placeholder="Surname" /> <input name="telephone"
-				type="tel" placeholder="Telephone" /> <input name="email"
-				type="email" placeholder="Email" /> <input type="submit"
-				value="Registration">
+			<input name="login" type="text" placeholder="Login" required  /> <input
+				name="password" type="password" placeholder="Password"  required /> <input
+				name="name" type="text" placeholder="Name"  required /> 
+				<input name="surname"
+				type="text" placeholder="Surname" required  /> 
+				<input name="telephone"
+				type="tel" placeholder="Telephone" required  /> 
+				<input name="email"
+				type="email" placeholder="Email" required  /> 
+				<input type="submit"
+				value="Get started">
 
 		</form>
 
@@ -94,7 +98,7 @@
 				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
 				
 				<div class="message_item">
-					<img src="<c:url value="${item.getUser().getPathToFoto()} " />"
+					<img src="<c:url value="resources\images\userImages\777\man.png" />"
 						alt="изображение профиля">
 					<div class="message_text">${item.getTextMessage()} 
 					<span class="message_time">${item.getTimeHMS()}</span>

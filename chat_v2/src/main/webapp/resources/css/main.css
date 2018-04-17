@@ -50,6 +50,7 @@ header{
 
 }
 .profile_image{
+	cursor:pointer;
     margin-left: 15px;
     margin-top: -5px;
     display: block;
@@ -64,6 +65,7 @@ header{
     margin-left: 10px;
 }
 #exit_buttom{
+	cursor:pointer;
     margin-left: 20px;
     margin-right: 4px;
     margin-top: -8px;

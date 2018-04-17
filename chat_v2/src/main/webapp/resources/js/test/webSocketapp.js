@@ -39,7 +39,7 @@ function disconnect() {
 
 function sendMessage() {
 	var name = $("#message").val();
-	stompClient.send("/app/messages", {}, JSON.stringify({
+	stompClient.send("/app/messages", {}, JSON.stringify({"user":{"login":$('#user_name').text()},
 		'textMessage' : name
 	}));
 	$("#message").val('');
@@ -49,6 +49,7 @@ function showGreeting(message) {
 		
 
 	message = JSON.parse(message);
+	
 	var textMessage = message.textMessage;
 	var timeStampMessage = message.timeStamp;
 	var timeStamp = new Date(timeStampMessage);

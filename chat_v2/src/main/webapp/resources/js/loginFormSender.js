@@ -20,7 +20,7 @@ $(document).ready(function () {
 			  
 		  
 		var formData = JSON.stringify(object);
-		alert(formData);
+		
 		
 	
 		  $.ajax({
@@ -39,12 +39,12 @@ $(document).ready(function () {
 				
 				}else if(result == "badpassword") {
 					
-					$( "#errorLoginForm").text("bad password");
+					$( "#errorLoginForm").text("Wrong password or login");
 					$( "#errorLoginForm").css( "display", "block" );
 					
 				
 				}else if(result == "badlogin"){
-					$( "#errorLoginForm").text("bad login");
+					$( "#errorLoginForm").text("User with such login exists");
 					$( "#errorLoginForm").css( "display", "block" );
 				} 
 				else{

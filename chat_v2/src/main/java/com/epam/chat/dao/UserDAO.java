@@ -6,10 +6,11 @@ import com.epam.chat.elements.User;
 import com.epam.chat.elements.UserRole;
 
 public interface UserDAO {
-	
+
 	void login(User loginingUser);
 
 	boolean isLogged(User user);
+
 	User checkLogIN(User user);
 
 	void kick(User kickableUser);
@@ -23,5 +24,8 @@ public interface UserDAO {
 	List<User> getAllLogged();
 
 	UserRole getRoleByNick(String nick);
+		
+	
+	User getUserByNick(String nick);
 
 }
