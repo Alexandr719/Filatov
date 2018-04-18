@@ -243,7 +243,7 @@ public class HibernateUserDAO implements UserDAO {
 			}
 		}
 
-		if (user != null && user.getPassword().equals(celectedUser.getPassword())) {
+		if (celectedUser != null && user.getPassword().equals(celectedUser.getPassword())) {
 			return true;
 		}
 

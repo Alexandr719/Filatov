@@ -18,6 +18,7 @@
 	rel="stylesheet">
 <script type="text/javascript"
 	src="<c:url value="resources/js/libraries/jquery-3.3.1.min.js" />"></script>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
 	
 
 
