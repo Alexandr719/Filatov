@@ -21,10 +21,11 @@ public class HibernateUserDAO implements UserDAO {
 	@Override
 	public void login(User loginingUser) {
 		Session session = null;
+		System.out.println("В логине пользователя");
 		// TODO :Добавить проверку залогиненых пользователей
 		// TODO :Закинуть роль и статус в файл конфигураций
-		UserRole role = new UserRole("USER", "Роль пользователя");
-		UserStatus status = new UserStatus("ONLINE", "Пользователь в сети");
+		UserRole role = new UserRole(2, "USER", "Пользователь");
+		UserStatus status = new UserStatus(1,"ONLINE", "Пользователь в сети");
 		loginingUser.setUserRole(role);
 		loginingUser.setUserStatus(status);
 		try {
@@ -72,7 +73,7 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public void kick(User kickableUser) {
-		UserStatus status = new UserStatus("BANNED", "Пользователь забанен");
+		UserStatus status = new UserStatus(3,"BANNED", "Пользователь забанен");
 		kickableUser.setUserStatus(status);
 		Session session = null;
 		try {
@@ -92,7 +93,7 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public void unkick(User user) {
-		UserStatus status = new UserStatus("OFFLINE", "Пользователь не в сети");
+		UserStatus status = new UserStatus(2,"OFFLINE", "Пользователь не в сети");
 		user.setUserStatus(status);
 		Session session = null;
 		try {
@@ -139,7 +140,7 @@ public class HibernateUserDAO implements UserDAO {
 
 	@Override
 	public void logout(User logoutingUser) {
-		UserStatus status = new UserStatus("OFFLINE", "Пользователь не в сети");
+		UserStatus status = new UserStatus(2,"OFFLINE","Пользователь не в сети");
 		logoutingUser.setUserStatus(status);
 		Session session = null;
 		try {

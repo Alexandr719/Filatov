@@ -6,8 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Lazy
 public class UserStatus {
-	public String nameStatus;
-	public String descriptionStatus;
+	
+	
+	private int idStatus;
+	private String nameStatus;
+	private String descriptionStatus;
+	
 
 	public UserStatus() {
 		// TODO Auto-generated constructor stub
@@ -25,13 +29,22 @@ public class UserStatus {
 		return descriptionStatus;
 	}
 
-	public UserStatus(String nameStatus, String descriptionStatus) {
+	public UserStatus(int idStatus, String nameStatus, String descriptionStatus) {
 		super();
 		this.nameStatus = nameStatus;
 		this.descriptionStatus = descriptionStatus;
+		this.idStatus = idStatus;
 	}
 
 	public void setDescriptionStatus(String descriptionStatus) {
 		this.descriptionStatus = descriptionStatus;
+	}
+
+	public int getIdStatus() {
+		return idStatus;
+	}
+
+	public void setIdStatus(int idStatus) {
+		this.idStatus = idStatus;
 	}
 }

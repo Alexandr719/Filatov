@@ -4,10 +4,17 @@
 <!-- Generated 23.03.2018 13:40:17 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.epam.chat.elements.MessageAction" table="CHATACTIONS">
-        <id name="nameAction" type="java.lang.String">
+       
+       
+        <id name="idAction" type="int">
+            <column name="IDACTION" />
+               </id>
+        
+        
+        <property name="nameAction" type="java.lang.String">
             <column name="NAMEACTION" />
-            <generator class="assigned" />
-        </id>
+           
+        </property>
         <property name="desctiptionAction" type="java.lang.String">
             <column name="DESCTIPTIONACTION" />
         </property>

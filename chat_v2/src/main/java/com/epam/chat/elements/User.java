@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class User {
+	private int idUser;
 	private String login;
 	private String password;
 	private String name;
@@ -115,6 +116,14 @@ public class User {
 	public String toString() {
 		return "User [login=" + login + ", password=" + password + ", name=" + name + ", surname=" + surname
 				+ ", telephone=" + telephone + ", email=" + email + "]";
+	}
+
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 
 }

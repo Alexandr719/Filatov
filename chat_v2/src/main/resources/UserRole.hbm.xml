@@ -4,10 +4,16 @@
 <!-- Generated 22.03.2018 0:49:00 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.epam.chat.elements.UserRole" table="CHATROLES">
-        <id name="nameRole" type="java.lang.String">
-            <column name="NAMEROLE" />
-            <generator class="assigned" />
+       
+        <id name="idRole" type="int">
+            <column name="IDROLE" />
+            
         </id>
+       
+         <property name="nameRole" type="java.lang.String">
+            <column name="NAMEROLE" />
+         </property>
+         
         <property name="descriptionRole" type="java.lang.String">
             <column name="DESCRIPTIONROLE" />
         </property>

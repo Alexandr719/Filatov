@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Lazy
 public class MessageAction {
+	private int idAction;
 	private String nameAction;
 	private String desctiptionAction;
 
@@ -14,9 +15,16 @@ public class MessageAction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MessageAction(String nameAction, String desctiptionAction) {
-		// TODO Auto-generated constructor stub
+	
+
+	public MessageAction(int idAction, String nameAction, String desctiptionAction) {
+		super();
+		this.idAction = idAction;
+		this.nameAction = nameAction;
+		this.desctiptionAction = desctiptionAction;
 	}
+
+
 
 	public String getNameAction() {
 		return nameAction;
@@ -32,6 +40,14 @@ public class MessageAction {
 
 	public void setDesctiptionAction(String desctiptionAction) {
 		this.desctiptionAction = desctiptionAction;
+	}
+
+	public int getIdAction() {
+		return idAction;
+	}
+
+	public void setIdAction(int idAction) {
+		this.idAction = idAction;
 	}
 
 	

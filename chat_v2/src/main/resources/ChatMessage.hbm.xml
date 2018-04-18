@@ -10,14 +10,14 @@
         </id>
        
          <many-to-one name="user" class="com.epam.chat.elements.User" fetch="join">
-            <column name="USERLOGIN" />
+            <column name="IDUSER" />
         </many-to-one>
         
         <property name="timeStamp" type="java.util.Date">
             <column name="TIMESTAMP" />
         </property>
         <many-to-one name="action" class="com.epam.chat.elements.MessageAction" fetch="join">
-            <column name="ACTIONNAME" />
+            <column name="IDACTION" />
         </many-to-one>
         <property name="textMessage" type="java.lang.String">
             <column name="TEXTMESSAGE" />

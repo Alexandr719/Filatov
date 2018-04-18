@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import com.epam.chat.dao.*;
+import com.epam.chat.elements.ChatMessage;
+import com.epam.chat.elements.MessageAction;
 import com.epam.chat.elements.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,6 +30,22 @@ public class LoginController {
 	public ModelAndView main(ModelMap model) throws SQLException {
 		
 		DAOFactory dao = DAOFactory.getDAOFactory();
+//		MessageDAO messageDAO = dao.getMessageDAO();
+		//UserDAO userDAO = dao.getUserDAO();
+//		ChatMessage message = new ChatMessage();
+		//User user = new User();
+	//	user.setLogin("Alex");
+	//	userDAO.login(user);
+//		message.setUser(user);
+//		MessageAction messageAction = new MessageAction(1,"SEND","Пользователь оставил сообщение");
+//		message.setAction(messageAction);
+//		java.util.Date date = new java.util.Date();
+//		message.setTimeStamp(date);
+//		messageDAO.sentMessage(message);
+//		
+		
+		
+		
 		return new ModelAndView("home", "dao", dao);
 	}
 
@@ -48,7 +66,6 @@ public class LoginController {
 			loginResult = "success";
 			model.addAttribute("sessionUser", user);
 		} else {
-			
 			loginResult = "invalidUserOrPassword";
 		}
 		return loginResult;

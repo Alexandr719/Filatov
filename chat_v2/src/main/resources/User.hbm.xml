@@ -4,10 +4,14 @@
 <!-- Generated 22.03.2018 1:28:39 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.epam.chat.elements.User" table="CHATUSERS">
-        <id name="login" type="java.lang.String">
-            <column name="LOGIN" />
-            <generator class="assigned" />
+        <id name="idUser" type="int">
+            <column name="IDUSER" />
+            <generator class="increment"/>
         </id>
+        <property name="login" type="java.lang.String">
+            <column name="LOGIN" />
+                   </property>
+        
         <property name="password" type="java.lang.String">
             <column name="PASSWORD" />
         </property>
@@ -24,10 +28,10 @@
             <column name="EMAIL" />
         </property>
         <many-to-one name="userRole" class="com.epam.chat.elements.UserRole" fetch="join">
-            <column name="ROLENAME" />
+            <column name="IDROLE" />
         </many-to-one>
         <many-to-one name="userStatus" class="com.epam.chat.elements.UserStatus" fetch="join">
-            <column name="STATUSNAME" />
+            <column name="IDSTATUS" />
         </many-to-one>
         <property name="pathToFoto" type="java.lang.String">
             <column name="PATHTOFOTO" />

@@ -31,9 +31,7 @@ public class MessageController {
 		
 		String jsonInString = mapper.writeValueAsString(message);
         
-		MessageAction messageAction = new MessageAction();
-		messageAction.setNameAction("SEND");
-		messageAction.setDesctiptionAction("Пользователь отправил сообщение");
+		MessageAction messageAction = new MessageAction(1,"SEND","Пользователь оставил сообщение");
 		message.setAction(messageAction);
 		
 		
