@@ -1,5 +1,11 @@
 package com.epam.chat.elements;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
+@Component
+@Lazy
 public class MessageAction {
 	private String nameAction;
 	private String desctiptionAction;
@@ -28,4 +34,7 @@ public class MessageAction {
 		this.desctiptionAction = desctiptionAction;
 	}
 
+	
+	
+	
 }

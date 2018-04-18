@@ -13,10 +13,6 @@
             <column name="USERLOGIN" />
         </many-to-one>
         
-        
-        
-        
-        
         <property name="timeStamp" type="java.util.Date">
             <column name="TIMESTAMP" />
         </property>

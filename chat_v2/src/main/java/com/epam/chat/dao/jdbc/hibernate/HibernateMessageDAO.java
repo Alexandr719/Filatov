@@ -27,6 +27,7 @@ public class HibernateMessageDAO implements MessageDAO {
 			session.save(message);
 			session.getTransaction().commit();
 		} catch (Exception e) {
+			//e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта Message",
 					JOptionPane.OK_OPTION);
 		} finally {
@@ -34,7 +35,6 @@ public class HibernateMessageDAO implements MessageDAO {
 				session.close();
 			}
 		}
-
 	}
 
 	@Override

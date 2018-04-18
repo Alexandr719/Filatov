@@ -4,6 +4,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,6 +37,18 @@ public class FileUploadController {
 					+ File.separator + "777";
 			String realPathtoUploads = request.getSession().getServletContext().getRealPath(directory);
 			System.out.println(realPathtoUploads);
+			
+			
+		
+//			String[] parts = realPathtoUploads.split("resources");
+//			
+//			String part2 = "\\resources" + parts[1]; 
+//			
+//			System.out.println(part2);
+			
+					
+			
+			
 			String filepath = Paths.get(realPathtoUploads, filename).toString();
 
 			// Save the file locally

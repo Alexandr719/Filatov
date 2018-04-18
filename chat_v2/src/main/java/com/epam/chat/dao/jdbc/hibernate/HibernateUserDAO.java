@@ -197,31 +197,7 @@ public class HibernateUserDAO implements UserDAO {
 		return user.getUserRole();
 	}
 
-	@Override
-	public User checkLogIN(User user) {
-		Session session = null;
-		User celectedUser = new User();
-
-		try {
-			session = HibernateUtil.getSessionFactory().openSession();
-			Criteria userCriteria = session.createCriteria(User.class);
-			userCriteria.add(Restrictions.eq("login", user.getLogin()));
-			celectedUser = (User) userCriteria.uniqueResult();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User",
-					JOptionPane.OK_OPTION);
-		} finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
-		}
-
-		if (user != null && user.getPassword().equals(celectedUser.getPassword())) {
-			return celectedUser;
-		}
-
-		return null;
-	}
+	
 
 	@Override
 	public User getUserByNick(String nick) {
@@ -245,6 +221,32 @@ public class HibernateUserDAO implements UserDAO {
 		
 
 		return celectedUser;
+	}
+
+	@Override
+	public boolean checkLogIn(User user) {
+		Session session = null;
+		User celectedUser = new User();
+
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			Criteria userCriteria = session.createCriteria(User.class);
+			userCriteria.add(Restrictions.eq("login", user.getLogin()));
+			celectedUser = (User) userCriteria.uniqueResult();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User",
+					JOptionPane.OK_OPTION);
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
+		}
+
+		if (user != null && user.getPassword().equals(celectedUser.getPassword())) {
+			return true;
+		}
+
+	 return false;
 	}
 
 }

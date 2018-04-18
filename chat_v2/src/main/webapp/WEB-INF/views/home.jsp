@@ -83,7 +83,7 @@
 				<li><div class="header_online_ball"></div></li>
 				<li><img src="<c:url value="resources/images/man.png" />"
 					alt="profile_image" class="profile_image"></li>
-				<li id="user_name">${sessinoUser.getLogin()}</li>
+				<li id="user_name">${sessionUser.getLogin()}</li>
 				<li><img src="<c:url value="resources/images/exit.png" />"
 					alt="Exit" id="exit_buttom"></li>
 

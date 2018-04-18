@@ -4,10 +4,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
-
 import com.epam.chat.dao.DAOFactory;
 import com.epam.chat.dao.MessageDAO;
 import com.epam.chat.dao.UserDAO;

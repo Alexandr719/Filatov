@@ -11,7 +11,7 @@ public interface UserDAO {
 
 	boolean isLogged(User user);
 
-	User checkLogIN(User user);
+	boolean checkLogIn(User user);
 
 	void kick(User kickableUser);
 
@@ -25,7 +25,6 @@ public interface UserDAO {
 
 	UserRole getRoleByNick(String nick);
 		
-	
 	User getUserByNick(String nick);
 
 }

@@ -37,13 +37,13 @@ $(document).ready(function () {
 					
 					location.reload();
 				
-				}else if(result == "badpassword") {
+				}else if(result == "invalidUserOrPassword") {
 					
 					$( "#errorLoginForm").text("Wrong password or login");
 					$( "#errorLoginForm").css( "display", "block" );
 					
 				
-				}else if(result == "badlogin"){
+				}else if(result == "invalidUser"){
 					$( "#errorLoginForm").text("User with such login exists");
 					$( "#errorLoginForm").css( "display", "block" );
 				} 
