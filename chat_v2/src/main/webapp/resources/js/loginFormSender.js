@@ -20,7 +20,7 @@ $(document).ready(function () {
 			  
 		  
 		var formData = JSON.stringify(object);
-		
+		alert(formData);
 		
 	
 		  $.ajax({

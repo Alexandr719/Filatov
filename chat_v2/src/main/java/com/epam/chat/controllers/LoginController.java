@@ -75,7 +75,7 @@ public class LoginController {
 	@ResponseBody
 	public String registrationUser(@RequestParam("formData") String registrationDate, @ModelAttribute User user,
 			ModelMap model) throws IOException {
-		String registrationResult = "error";
+		String registrationResult;
 		ObjectMapper objectMapper = new ObjectMapper();
 		user = objectMapper.readValue(registrationDate, User.class);
 	

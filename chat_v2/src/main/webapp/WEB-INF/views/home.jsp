@@ -18,7 +18,7 @@
 	rel="stylesheet">
 <script type="text/javascript"
 	src="<c:url value="resources/js/libraries/jquery-3.3.1.min.js" />"></script>
-	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+	
 	
 
 
@@ -42,9 +42,8 @@
 
 			<input name="login" type="text" placeholder="Login" required  /> <input
 				name="password" type="password" placeholder="Password" required  />
-				
-				
-				 <input		type="submit" value="Get started">
+						
+			<input		type="submit" value="Get started">
 
 		</form>
 
@@ -53,16 +52,20 @@
 		<form class="form_registration form_submit" metod="POST"
 			action="registration_user" enctype="multipart/form-data">
 			<input name="login" type="text" placeholder="Login" required  /> <input
-				name="password" type="password" placeholder="Password"  required /> <input
-				name="name" type="text" placeholder="Name"  required /> 
+				name="password" type="password" placeholder="Password"   /> <input
+				name="name" type="text" placeholder="Name"   /> 
 				<input name="surname"
-				type="text" placeholder="Surname" required  /> 
+				type="text" placeholder="Surname"   /> 
 				<input name="telephone"
-				type="tel" placeholder="Telephone" required  /> 
+				type="tel" placeholder="Telephone"   /> 
 				<input name="email"
-				type="email" placeholder="Email" required  /> 
+				type="email" placeholder="Email"   /> 
+				
+				
+			
 				<input type="submit"
 				value="Get started">
+				
 
 		</form>
 
@@ -160,8 +163,6 @@
 				</div>
 				</c:forEach>
 
-
-
 			</div>
 		</div>
 
@@ -179,8 +180,7 @@
 		</label> <a  class="upload_files button"   >Download image</a>
 		<div class="ajax-reply"></div>
    
-  
-  
+   
   
   
 </form>
@@ -200,8 +200,5 @@
      <script type="text/javascript"	src="<c:url value="resources/js/test/webSocketapp.js" />"></script>
   
 	
-	
-	
-
 </body>
 </html>
