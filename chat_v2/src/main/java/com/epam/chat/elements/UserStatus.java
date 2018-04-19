@@ -6,45 +6,43 @@ import org.springframework.stereotype.Component;
 @Component
 @Lazy
 public class UserStatus {
-	
-	
-	private int idStatus;
-	private String nameStatus;
-	private String descriptionStatus;
-	
 
-	public UserStatus() {
-		// TODO Auto-generated constructor stub
-	}
+  private int idStatus;
+  private String nameStatus;
+  private String descriptionStatus;
 
-	public String getNameStatus() {
-		return nameStatus;
-	}
+  public UserStatus() {
+    // TODO Auto-generated constructor stub
+  }
 
-	public void setNameStatus(String nameStatus) {
-		this.nameStatus = nameStatus;
-	}
+  public String getNameStatus() {
+    return nameStatus;
+  }
 
-	public String getDescriptionStatus() {
-		return descriptionStatus;
-	}
+  public void setNameStatus(String nameStatus) {
+    this.nameStatus = nameStatus;
+  }
 
-	public UserStatus(int idStatus, String nameStatus, String descriptionStatus) {
-		super();
-		this.nameStatus = nameStatus;
-		this.descriptionStatus = descriptionStatus;
-		this.idStatus = idStatus;
-	}
+  public String getDescriptionStatus() {
+    return descriptionStatus;
+  }
 
-	public void setDescriptionStatus(String descriptionStatus) {
-		this.descriptionStatus = descriptionStatus;
-	}
+  public UserStatus(int idStatus, String nameStatus, String descriptionStatus) {
+    super();
+    this.nameStatus = nameStatus;
+    this.descriptionStatus = descriptionStatus;
+    this.idStatus = idStatus;
+  }
 
-	public int getIdStatus() {
-		return idStatus;
-	}
+  public void setDescriptionStatus(String descriptionStatus) {
+    this.descriptionStatus = descriptionStatus;
+  }
 
-	public void setIdStatus(int idStatus) {
-		this.idStatus = idStatus;
-	}
+  public int getIdStatus() {
+    return idStatus;
+  }
+
+  public void setIdStatus(int idStatus) {
+    this.idStatus = idStatus;
+  }
 }

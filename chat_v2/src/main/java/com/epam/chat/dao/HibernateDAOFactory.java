@@ -5,17 +5,15 @@ import com.epam.chat.dao.jdbc.hibernate.HibernateUserDAO;
 
 public class HibernateDAOFactory extends DAOFactory {
 
-	
+    @Override
+    public UserDAO getUserDAO() {
 
-	@Override
-	public UserDAO getUserDAO() {
+	return new HibernateUserDAO();
+    }
 
-		return new HibernateUserDAO();
-	}
+    @Override
+    public MessageDAO getMessageDAO() {
 
-	@Override
-	public MessageDAO getMessageDAO() {
-
-		return new HibernateMessageDAO();
-	}
+	return new HibernateMessageDAO();
+    }
 }

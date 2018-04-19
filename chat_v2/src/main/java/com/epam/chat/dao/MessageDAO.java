@@ -5,8 +5,8 @@ import java.util.List;
 import com.epam.chat.elements.ChatMessage;
 
 public interface MessageDAO {
-	
-	void sentMessage(ChatMessage message);
 
-	List<ChatMessage> getLast(int count);
+    void sentMessage(ChatMessage message);
+
+    List<ChatMessage> getLast(int count);
 }

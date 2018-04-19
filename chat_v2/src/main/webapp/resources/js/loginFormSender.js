@@ -24,7 +24,7 @@ $(document).ready(function () {
 		
 	
 		  $.ajax({
-			type:$(this).attr('metod'),
+			type:$(this).attr('method'),
 			url:$(this).attr('action'),
 			data: ({formData: formData}) ,
 			

@@ -7,24 +7,24 @@ import com.epam.chat.elements.UserRole;
 
 public interface UserDAO {
 
-	void login(User loginingUser);
+    void login(User loginingUser);
 
-	boolean isLogged(User user);
+    boolean isLogged(User user);
 
-	boolean checkLogIn(User user);
+    boolean checkLogIn(User user);
 
-	void kick(User kickableUser);
+    void kick(User kickableUser);
 
-	void unkick(User user);
+    void unkick(User user);
 
-	boolean isKicked(User user);
+    boolean isKicked(User user);
 
-	void logout(User logoutingUser);
+    void logout(User logoutingUser);
 
-	List<User> getAllLogged();
+    List<User> getAllLogged();
 
-	UserRole getRoleByNick(String nick);
-		
-	User getUserByNick(String nick);
+    UserRole getRoleByNick(String nick);
+
+    User getUserByNick(String nick);
 
 }

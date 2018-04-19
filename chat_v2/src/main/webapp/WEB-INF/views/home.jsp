@@ -19,11 +19,6 @@
 <script type="text/javascript"
 	src="<c:url value="resources/js/libraries/jquery-3.3.1.min.js" />"></script>
 	
-	
-
-
-
-
 
 <title>Chat by Alexandr</title>
 </head>
@@ -37,7 +32,7 @@
 			</ul>
 		</div>
 
-		<form class="form_login form_submit " metod="POST" action="login_user"
+		<form class="form_login form_submit " method="POST" action="login_user"
 			enctype="multipart/form-data">
 
 			<input name="login" type="text" placeholder="Login" required  /> <input
@@ -48,7 +43,7 @@
 
 
 
-		<form class="form_registration form_submit" metod="POST"
+		<form class="form_registration form_submit" method="POST"
 			action="registration_user" enctype="multipart/form-data">
 			<input name="login" type="text" placeholder="Login" required  /> <input
 				name="password" type="password" placeholder="Password"   /> <input
@@ -104,7 +99,7 @@
 					<img src="<c:url value="resources\images\userImages\777\man.png" />"
 						alt="изображение профиля">
 					<div class="message_text">${item.getTextMessage()} 
-					<span class="message_time">${item.getTimeHMS()}</span>
+					<span class="message_time">${item.getTimeHourMinSec()}</span>
 
 					</div>
 				</div>
