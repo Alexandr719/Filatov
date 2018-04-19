@@ -44,7 +44,6 @@
 				name="password" type="password" placeholder="Password" required  />
 						
 			<input		type="submit" value="Get started">
-
 		</form>
 
 
