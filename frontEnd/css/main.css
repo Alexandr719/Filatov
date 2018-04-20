@@ -1,0 +1,248 @@
+@CHARSET "UTF-8";
+
+header{
+    display: flex;
+    width: 100vw;
+    background-color: #324a5e;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#main{
+	display:block;
+    font-family: Berlin Sans FB, Calibri;
+}
+
+.header_chatName{
+    font-family: Berlin Sans FB, Calibri;
+    padding: 10px;
+    font-size: 20px;
+    color: #ff7058;
+}
+
+
+
+#main ul{
+    list-style-type: none;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+
+}
+#main ul li{
+    padding: 10px 0px;
+
+}
+#main  ul li:nth-child(1){
+    margin-top: 4px;
+    font-size: 13px;
+    color: black;
+}
+
+.header_online_ball{
+    margin-left: 5px;
+    margin-top: 6px;
+    display: block;
+
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background-color: #59ff6f;
+
+}
+.profile_image{
+	cursor:pointer;
+    margin-left: 15px;
+    margin-top: -5px;
+    display: block;
+
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+
+
+}
+#user_name{
+    margin-left: 10px;
+}
+#exit_buttom{
+	cursor:pointer;
+    margin-left: 20px;
+    margin-right: 4px;
+    margin-top: -8px;
+    display: block;
+
+    height: 30px;
+    width: 30px;
+
+}
+.main_window{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.users_list{
+    background-color: green;
+
+}
+
+
+header, .content, .sidebar {
+    box-sizing: border-box;
+
+}
+
+
+
+
+.sidebar {
+    background-color: #2b3b4e;
+}
+
+.content {
+    background-color: white;
+}
+
+
+
+
+#main {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+}
+header  {
+    flex: 1 1 100%;
+}
+.sidebar {
+    flex: 0 0 200px;
+}
+.content {
+    min-height: calc(100vh - 45px);
+    flex: 1 1 60px;
+}
+
+
+ @media (max-width: 600px) { 
+    .sidebar { flex: 1 2 400px; }
+    .content { flex: 1 1 100%; }
+ }
+ @media (min-width: 600px) {
+     header        { order: 1; }
+    .sidebar       { order: 3; }
+    .content       { order: 2; }
+    .footer        { order: 4; }
+} 
+.sidebar_header img{
+
+    margin: 10px 10px -8px 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+
+.sidebar_userlist{
+    margin-left: 10px;
+    overflow-y: auto;
+    margin-top: 10px;
+    height: 75vh;
+    width:87%;
+}
+.user_id{
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #84dbff;
+}
+
+.online_ball{
+    margin-left: 10px;
+    margin-top: 4px;
+    height: 8px;
+    width: 8px;
+    background-color: #ff7058;
+    border: solid black 1px;
+    border-radius: 50%;
+    float: right;
+}
+.active_ball{
+    background-color: #59ff6f;
+}
+.content_messagelist{
+    max-height: 80vh;
+    overflow-y: scroll;
+    flex-grow: 20;
+
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.content_send_message form{
+    width: 96%;
+    display: block;
+    margin: 0px auto;
+    padding: 10px;
+
+}
+.content_send_message  button{
+	color:  #ff7058;
+    font-size: 1.2em;
+    border: 0;
+    background-color: #2b3b4e;
+    width: 28%;
+    border-radius: 10px;
+}
+.content_send_message input[type="text"]{
+    color: #ff7058;
+    padding-left: 4px;
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 10px;
+    width: 70%;
+    background-color: #2b3b4e;
+}
+
+.message_item{
+    margin: 10px 0px 0px 10px;
+    display: flex;
+    flex-direction: row;
+}
+.message_item img{
+    height: 30px;
+    width: 30px;
+    border: solid black 1px;
+    border-radius: 50%;
+
+
+}
+
+.message_text{
+
+    border-radius: 10px;
+    border: 2px black solid;
+    margin-left: 10px;
+    background-color: #cecaff;
+    padding: 10px 30px;
+
+}
+
+
+
+
+.message_time{
+    position: relative;
+    font-size: 10px;
+    top: 10px;
+
+}
+
+
+
+
+
+
+
+
