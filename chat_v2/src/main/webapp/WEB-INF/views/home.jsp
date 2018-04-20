@@ -79,24 +79,21 @@
 			<ul>
 				<li>Online</li>
 				<li><div class="header_online_ball"></div></li>
-				<li><img src="<c:url value="resources/images/man.png" />"
+				<li><img src="<c:url value="${sessionUser.getPathToFoto()}" />"
 					alt="profile_image" class="profile_image"></li>
 				<li id="user_name">${sessionUser.getLogin()}</li>
 				<li><img src="<c:url value="resources/images/exit.png" />"
 					alt="Exit" id="exit_buttom"></li>
-
 			</ul>
-
 
 		</header>
 
 		<div class="content">
 			<div class="content_messagelist" id="content_messageList">
-						
+					
 				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
-				
-				<div class="message_item">
-					<img src="<c:url value="resources\images\userImages\777\man.png" />"
+				  <div class="message_item">
+					<img src="<c:url value="${item.getUser().getPathToFoto()}" />"
 						alt="изображение профиля">
 					<div class="message_text">${item.getTextMessage()} 
 					<span class="message_time">${item.getTimeHourMinSec()}</span>
@@ -140,7 +137,7 @@
 						<img src="<c:url value="resources/images/cross-remove-sign.png" />" alt="Выход"
 							class="userExit">
 						<div class="mainInfo">
-							<img src="<c:url value="resources/images/man.png" />" alt="Изображение профиля"> 
+							<img src="<c:url value="${item.getPathToFoto()}" />" alt="Изображение профиля"> 
 							<span>${item.getName()}   ${item.getSurname()} </span>
 						</div>
 
@@ -166,7 +163,7 @@
 
 	<div class="formAddFoto">
 <form id="upload-file-form">
-   
+   <input type="text">
    <input type="file" name="uploadfile" id="file" class="input-file" accept="image/*">
 		 <label	for="file" class="btn btn-tertiary js-labelFile">
 		  <i	class="icon fa fa-check"></i> <span class="js-fileName">Choose

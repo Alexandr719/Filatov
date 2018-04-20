@@ -3,7 +3,9 @@ function uploadImageFile(){
 	if($("#file")[0].files[0]== null){
 		alert("Choose file");
 	}else{
-	
+//		 var formData = new FormData();
+//         formData.append('file', $('input[type=file]')[0].files[0]);
+//         console.log("form data " + formData);
 			
 	 $.ajax({
 		    url: "uploadFile",

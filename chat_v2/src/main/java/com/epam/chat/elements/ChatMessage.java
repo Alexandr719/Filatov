@@ -47,8 +47,6 @@ public class ChatMessage {
     this.textMessage = textMessage;
   }
 
- 
-
   public User getUser() {
     return user;
   }
@@ -64,15 +62,10 @@ public class ChatMessage {
     return strDate;
 
   }
-  
-  
+
   @Override
   public String toString() {
     return "ChatMessage [userLogin=" + user + ", textMessage=" + textMessage + "]";
   }
-  
-  
-  
-  
 
 }

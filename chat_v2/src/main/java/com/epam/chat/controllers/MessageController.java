@@ -15,27 +15,25 @@ import com.epam.chat.socket.Greeting;
 @Controller
 public class MessageController {
 
-    @MessageMapping("/messages")
-    @SendTo("/topic/greetings")
-    public Greeting greeting(ChatMessage message, User user) throws Exception {
-	DAOFactory dao = DAOFactory.getDAOFactory();
-	UserDAO userDAO = dao.getUserDAO();
-	java.util.Date date = new java.util.Date();
+  @MessageMapping("/messages")
+  @SendTo("/topic/greetings")
+  public Greeting greeting(ChatMessage message, User user) throws Exception {
+    DAOFactory dao = DAOFactory.getDAOFactory();
+    UserDAO userDAO = dao.getUserDAO();
+    java.util.Date date = new java.util.Date();
 
-	ObjectMapper mapper = new ObjectMapper();
-	user = userDAO.getUserByNick(message.getUser().getLogin());
-	message.setTimeStamp(date);
-	message.setUser(user);
+    ObjectMapper mapper = new ObjectMapper();
+    user = userDAO.getUserByNick(message.getUser().getLogin());
+    message.setTimeStamp(date);
+    message.setUser(user);
 
-	String jsonInString = mapper.writeValueAsString(message);
+    String jsonInString = mapper.writeValueAsString(message);
+    MessageAction messageAction = new MessageAction(1, "SEND", "Пользователь оставил сообщение");
+    message.setAction(messageAction);
+    MessageDAO messageDAO = dao.getMessageDAO();
+    messageDAO.sentMessage(message);
 
-	MessageAction messageAction = new MessageAction(1, "SEND", "Пользователь оставил сообщение");
-	message.setAction(messageAction);
-
-	MessageDAO messageDAO = dao.getMessageDAO();
-	messageDAO.sentMessage(message);
-
-	return new Greeting(jsonInString);
-    }
+    return new Greeting(jsonInString);
+  }
 
 }
