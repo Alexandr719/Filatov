@@ -111,17 +111,7 @@ public class LoginController {
   
   
   
-  @RequestMapping(value = "/registration_user2", method = RequestMethod.POST, produces = "text/html")
-  @ResponseBody
-  public String registrationUserTwo(@RequestParam("photo") MultipartFile file,  User user,
-      ModelMap model) throws IOException {
-     System.out.println("Here");
-      System.out.println(user);
-  
-    return null;
 
-  }
-  
   
   
 

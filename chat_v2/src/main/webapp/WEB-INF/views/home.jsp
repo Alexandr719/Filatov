@@ -40,7 +40,7 @@
 						
 			<input		type="submit" value="Get started">
 			
-			<img src="files/default.png">
+		
 		</form>
 
 
@@ -59,7 +59,7 @@
 			
 				
 			
-				<input id="regButton" type="submit"
+				<input id="regButton" type="button"
 				value="Get started">
 				
 				
