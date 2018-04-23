@@ -29,7 +29,7 @@ import com.epam.chat.elements.User;
 @Controller
 @SessionAttributes("sessionUser")
 public class FileUploadController {
-  public static final String absolutePath="D:\\Filatov\\Programs\\JAVA\\Images\\UserImages";
+  public static final String absolutePath="D:\\Filatov\\Programs\\JAVA\\Images\\chat\\files";
   public static final String relativePath="files";
   
   
@@ -37,7 +37,7 @@ public class FileUploadController {
   
   @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
   @ResponseBody
-  public String  uploadFile(@RequestParam("uploadfile") MultipartFile file,ModelMap model) {
+  public String  uploadFile(@RequestParam("uploadfile") MultipartFile file, ModelMap model) {
     
     	
     

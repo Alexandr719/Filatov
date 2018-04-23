@@ -39,8 +39,6 @@
 				name="password" type="password" placeholder="Password" required  />
 						
 			<input		type="submit" value="Get started">
-			
-			<img src="files/default.png">
 		</form>
 
 
@@ -56,12 +54,11 @@
 				type="tel" placeholder="Telephone"   /> 
 				<input name="email"
 				type="email" placeholder="Email"   /> 
-			
+				
 				
 			
-				<input id="regButton" type="submit"
+				<input type="submit"
 				value="Get started">
-				
 				
 
 		</form>

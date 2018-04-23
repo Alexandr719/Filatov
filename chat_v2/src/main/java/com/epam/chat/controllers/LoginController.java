@@ -3,6 +3,8 @@ package com.epam.chat.controllers;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.MultipartFilter;
 import org.springframework.web.servlet.ModelAndView;
 import com.epam.chat.dao.*;
 import com.epam.chat.elements.User;
@@ -102,5 +107,40 @@ public class LoginController {
     sessionStatus.setComplete();
 
   }
+  
+  
+  
+  
+  @RequestMapping(value = "/registration_user2", method = RequestMethod.POST, produces = "text/html")
+  @ResponseBody
+  public String registrationUserTwo(@RequestParam("photo") MultipartFile file,  User user,
+      ModelMap model) throws IOException {
+     System.out.println("Here");
+      System.out.println(user);
+  
+    return null;
+
+  }
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 }

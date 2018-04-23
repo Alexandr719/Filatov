@@ -4,11 +4,14 @@ $(document).ready(function () {
 
 	
 	$( ".form_submit" ).submit(function( event ) {
+		alert("hello30");
 		
 		
+	//	$.post( "registration_user2" );
+		event.preventDefault();
 		
-		  event.preventDefault();
-		  
+//		  event.preventDefault();
+//		  
 		  var dataFromForm = new FormData(this);
 		  var object = {};
 		
@@ -27,9 +30,7 @@ $(document).ready(function () {
 			type:$(this).attr('method'),
 			url:$(this).attr('action'),
 			data: ({formData: formData}) ,
-			
-		
-			success:function(result){
+		    success:function(result){
 				
 				if(result == "success"){
 					
@@ -62,7 +63,7 @@ $(document).ready(function () {
 		  
 		  
 		  
-		});
+	});
 	
 	
 });
