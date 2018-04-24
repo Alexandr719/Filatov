@@ -72,11 +72,9 @@ public class LoginController {
 
   @RequestMapping(value = "/registration_user", method = RequestMethod.POST, produces = "text/html")
   @ResponseBody
-  public String registrationUser(@RequestParam("formData") String registrationDate, @ModelAttribute User user,
-      ModelMap model) throws IOException {
+  public String registrationUser(@RequestParam("photo") MultipartFile file,User user, ModelMap model) throws IOException {
     String registrationResult;
-    ObjectMapper objectMapper = new ObjectMapper();
-    user = objectMapper.readValue(registrationDate, User.class);
+  
 
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();

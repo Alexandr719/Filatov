@@ -62,7 +62,7 @@
 				<input id="regButton" type="submit"
 				value="Get started">
 				
-				
+				<input type = "file" name="photo"> 
 
 		</form>
 
