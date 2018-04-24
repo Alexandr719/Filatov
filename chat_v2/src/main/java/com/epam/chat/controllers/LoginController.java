@@ -20,6 +20,7 @@ import org.springframework.web.multipart.support.MultipartFilter;
 import org.springframework.web.servlet.ModelAndView;
 import com.epam.chat.dao.*;
 import com.epam.chat.elements.User;
+import com.epam.chat.handler.FileUploader;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
@@ -75,7 +76,7 @@ public class LoginController {
   public String registrationUser(@RequestParam("photo") MultipartFile file,User user, ModelMap model) throws IOException {
     String registrationResult;
   
-
+    System.out.println(file.getOriginalFilename());
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
     if (userDAO.isLogged(user)) {
@@ -86,7 +87,15 @@ public class LoginController {
       userDAO.login(user);
       registrationResult = "success";
       model.addAttribute("sessionUser", user);
-
+      
+      FileUploader uploader = new FileUploader();
+      
+     if(uploader.downloadFile(user, file)) {
+       user = uploader.getUser();
+       userDAO.updateUser(user); 
+     }
+        
+      
     }
 
     return registrationResult;

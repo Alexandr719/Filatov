@@ -25,53 +25,33 @@ import org.springframework.web.multipart.support.MultipartFilter;
 import com.epam.chat.dao.DAOFactory;
 import com.epam.chat.dao.UserDAO;
 import com.epam.chat.elements.User;
+import com.epam.chat.handler.FileUploader;
 
 @Controller
 @SessionAttributes("sessionUser")
 public class FileUploadController {
-  public static final String absolutePath = "D:\\Filatov\\Programs\\JAVA\\Images\\chat\\files";
-  public static final String relativePath = "files";
 
   @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
   @ResponseBody
   public String uploadFile(@RequestParam("uploadfile") MultipartFile file, ModelMap model) {
-
+    DAOFactory dao = DAOFactory.getDAOFactory();
+    UserDAO userDAO = dao.getUserDAO();
     String fileName = null;
     User user = (User) model.get("sessionUser");
-
-    if (!file.isEmpty()) {
-      try {
-	byte[] bytes = file.getBytes();
-	fileName = file.getOriginalFilename();
-	File dir = new File(absolutePath + File.separator + user.getIdUser());
-	user.setPathToFoto(relativePath + "/" + user.getIdUser() + "/" + fileName);
-	System.out.println(dir);
-	if (!dir.exists()) {
-	  dir.mkdirs();
-	}
-
-	File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
-
-	BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(uploadedFile));
-	stream.write(bytes);
-	stream.flush();
-	stream.close();
-	User userTwo = (User) model.get("sessionUser");
-	System.out.println(userTwo);
-	// logger.info("uploaded: " + uploadedFile.getAbsolutePath());
-
-	DAOFactory dao = DAOFactory.getDAOFactory();
-	UserDAO userDAO = dao.getUserDAO();
-	userDAO.updateUser(user);
-
-	return "You successfully uploaded file=" + fileName;
-
-      } catch (Exception e) {
-	return "You failed to upload " + fileName + " => " + e.getMessage();
-      }
-    } else {
-      return "You failed to upload " + fileName + " because the file was empty.";
+    FileUploader uploader = new FileUploader();
+      
+    if(uploader.downloadFile(user, file)) {
+      user = uploader.getUser();
+      userDAO.updateUser(user); 
     }
+    
+   
+   
+    
+    
+  
+    
+    return "successfull";
   }
 
   @Bean

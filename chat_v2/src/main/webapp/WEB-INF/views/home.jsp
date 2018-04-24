@@ -56,13 +56,13 @@
 				type="tel" placeholder="Telephone"   /> 
 				<input name="email"
 				type="email" placeholder="Email"   /> 
-			
+			 <input type = "file" name="photo"> 
 				
 			
 				<input id="regButton" type="submit"
 				value="Get started">
 				
-				<input type = "file" name="photo"> 
+			
 
 		</form>
 
@@ -170,8 +170,7 @@
 
 	<div class="formAddFoto">
 <form id="upload-file-form">
-   <input type="text">
-   <input type="file" name="uploadfile" id="file" class="input-file" accept="image/*">
+     <input type="file" name="uploadfile" id="file" class="input-file" accept="image/jpeg,image/png">
 		 <label	for="file" class="btn btn-tertiary js-labelFile">
 		  <i	class="icon fa fa-check"></i> <span class="js-fileName">Choose
 				a file</span>
@@ -185,7 +184,7 @@
 	</div>
 
 
-    <script type="text/javascript"	src="<c:url value="resources/js/test/fileUploader.js" />"></script>
+  <script type="text/javascript"	src="<c:url value="resources/js/test/fileUploader.js" />"></script>
 	<script src="<c:url value="resources/js/formChoice.js" />"></script>
 	<script src="<c:url value="resources/js/loginFormSender.js" />"></script>
 	<script src="<c:url value="resources/js/registrationTest.js" />"></script>
