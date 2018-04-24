@@ -110,15 +110,23 @@
 
 				</c:forEach>
 					<p id="response"></p>
+					
+					
+
 
 
 			</div>
+			
+			
+			
 			<div class="content_send_message">
 				
 					<input type="text" id="message" /> 
 					<button id="messageSenderId" type="submit" onclick="sendMessage();" >Send</button>
 			
 			</div>
+			         
+           <img src="<c:url value="resources/images/downarrow_abajo_5819.png" />"  id="buttonScrollPage"      alt="DownPage">
 		
 		</div>
 		

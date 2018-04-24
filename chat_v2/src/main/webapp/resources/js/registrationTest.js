@@ -3,6 +3,10 @@ function showMainClass() {
 	  $('#main').show();
 	  $('.userInfo').hide();
 	  $('.formAddFoto').hide();
+	  $("#content_messageList").scrollTop($('#content_messageList').prop('scrollHeight'));
+	   
+	
+
 	  
 	 
 	  
@@ -17,13 +21,13 @@ function showMainClass() {
 
 		});
 		$('.user_name').click(function() {
-			$(this).parent().children(".userInfo").show();
+			$(this).parent().children(".userInfo").show("slow");
 
 		});
 
 		$('.userExit').click(function() {
 
-			$(this).parent().hide();
+			$(this).parent().hide("slow");
 
 		});
 	  

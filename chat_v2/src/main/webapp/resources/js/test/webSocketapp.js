@@ -23,6 +23,7 @@ function insetIntoHtml(messageText, messageTime,pathToPhoto,messageLogin)	{
 	message_item.append(message_login);
 	message_item.append(message_text);
 	$(".content_messageList").append(message_item);
+	 $("#content_messageList").scrollTop($('#content_messageList').prop('scrollHeight'));
    
 }    
 
@@ -55,7 +56,7 @@ function showGreeting(message) {
 
 	message = JSON.parse(message);
 	var pathToPhoto = message.user.pathToFoto;
-	alert(pathToPhoto);
+
 
 	var textMessage = message.textMessage;
 	var timeStampMessage = message.timeStamp;

@@ -114,7 +114,7 @@ header  {
     flex: 1 1 100%;
 }
 .sidebar {
-    flex: 0 0 200px;
+    flex: 0 0 250px;
 }
 .content {
     min-height: calc(100vh - 45px);
@@ -255,7 +255,14 @@ header  {
 	
 }
 
-
+#buttonScrollPage{
+	 display:none;
+	  height: 40px;
+    width: 50;
+    position: absolute;
+    top: 300px;
+    right: 280px;
+}
 
 
 
