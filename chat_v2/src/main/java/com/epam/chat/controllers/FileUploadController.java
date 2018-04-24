@@ -1,16 +1,8 @@
 package com.epam.chat.controllers;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.file.Paths;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.Order;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,21 +28,14 @@ public class FileUploadController {
   public String uploadFile(@RequestParam("uploadfile") MultipartFile file, ModelMap model) {
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
-    String fileName = null;
     User user = (User) model.get("sessionUser");
     FileUploader uploader = new FileUploader();
-      
-    if(uploader.downloadFile(user, file)) {
+
+    if (uploader.downloadFile(user, file)) {
       user = uploader.getUser();
-      userDAO.updateUser(user); 
+      userDAO.updateUser(user);
     }
-    
-   
-   
-    
-    
-  
-    
+
     return "successfull";
   }
 

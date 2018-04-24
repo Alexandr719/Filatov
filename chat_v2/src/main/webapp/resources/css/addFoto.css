@@ -46,7 +46,7 @@
     color: #5AAC7B;
 }
 .formAddFoto a{
-
+    cursor: pointer;
     text-decoration: none;
     border: solid black 1px;
     display: block;

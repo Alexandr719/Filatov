@@ -26,9 +26,7 @@ public interface UserDAO {
   UserRole getRoleByNick(String nick);
 
   User getUserByNick(String nick);
-  
-  void updateUser(User user);  
-  
-  
+
+  void updateUser(User user);
 
 }

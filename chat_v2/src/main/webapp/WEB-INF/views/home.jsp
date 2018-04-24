@@ -116,7 +116,7 @@
 			<div class="content_send_message">
 				
 					<input type="text" id="message" /> 
-					<button type="submit" onclick="sendMessage();" >Send</button>
+					<button id="messageSenderId" type="submit" onclick="sendMessage();" >Send</button>
 			
 			</div>
 		
@@ -187,6 +187,7 @@
   <script type="text/javascript"	src="<c:url value="resources/js/test/fileUploader.js" />"></script>
 	<script src="<c:url value="resources/js/formChoice.js" />"></script>
 	<script src="<c:url value="resources/js/loginFormSender.js" />"></script>
+	<script src="<c:url value="resources/js/statusRoot.js" />"></script>
 	<script src="<c:url value="resources/js/registrationTest.js" />"></script>
 	<script src="<c:url value="resources/js/choiseFile.js" />"></script>
 	<script src="<c:url value="resources/js/exitButton.js" />"></script>

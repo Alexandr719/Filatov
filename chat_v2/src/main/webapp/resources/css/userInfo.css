@@ -40,11 +40,14 @@
 .userInfo .adminButton{
 
     border: none;
-    display: block;
+    display: none;
     width: 100px;
     margin: 10px auto;
     background-color: #ff7058;
 }
+
+
+
 .userExit{
     height: 15px;
     width: 15px;

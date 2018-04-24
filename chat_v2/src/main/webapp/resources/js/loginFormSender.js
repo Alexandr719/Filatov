@@ -1,8 +1,3 @@
-$(document).ready(function () {
-	
-	
-
-	
 	$( ".form_submit" ).submit(function( event ) {
 	
 		
@@ -45,4 +40,4 @@ $(document).ready(function () {
 	});
 	
 	
-});
+

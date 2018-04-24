@@ -3,8 +3,6 @@ package com.epam.chat.dao.jdbc.hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -21,9 +19,7 @@ public class HibernateUserDAO implements UserDAO {
   @Override
   public void login(User loginingUser) {
     Session session = null;
-    System.out.println("В логине пользователя");
-    // TODO :Добавить проверку залогиненых пользователей
-    // TODO :Закинуть роль и статус в файл конфигураций
+
     UserRole role = new UserRole(2, "USER", "Пользователь");
     UserStatus status = new UserStatus(1, "ONLINE", "Пользователь в сети");
     loginingUser.setUserRole(role);
@@ -34,7 +30,7 @@ public class HibernateUserDAO implements UserDAO {
       session.save(loginingUser);
       session.getTransaction().commit();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -54,7 +50,7 @@ public class HibernateUserDAO implements UserDAO {
       userCriteria.add(Restrictions.eq("login", user.getLogin()));
       user = (User) userCriteria.uniqueResult();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -80,7 +76,7 @@ public class HibernateUserDAO implements UserDAO {
       session.update(kickableUser);
       session.getTransaction().commit();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -100,7 +96,7 @@ public class HibernateUserDAO implements UserDAO {
       session.update(user);
       session.getTransaction().commit();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -120,7 +116,7 @@ public class HibernateUserDAO implements UserDAO {
       userCriteria.add(Restrictions.eq("login", user.getLogin()));
       user = (User) userCriteria.uniqueResult();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -146,7 +142,7 @@ public class HibernateUserDAO implements UserDAO {
       session.update(logoutingUser);
       session.getTransaction().commit();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -164,7 +160,7 @@ public class HibernateUserDAO implements UserDAO {
       session = HibernateUtil.getSessionFactory().openSession();
       users = session.createCriteria(User.class).list();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка вывода всх пользователей", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -184,7 +180,7 @@ public class HibernateUserDAO implements UserDAO {
       userCriteria.add(Restrictions.eq("login", nick));
       user = (User) userCriteria.uniqueResult();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -205,7 +201,7 @@ public class HibernateUserDAO implements UserDAO {
       userCriteria.add(Restrictions.eq("login", nick));
       celectedUser = (User) userCriteria.uniqueResult();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -226,7 +222,7 @@ public class HibernateUserDAO implements UserDAO {
       userCriteria.add(Restrictions.eq("login", user.getLogin()));
       celectedUser = (User) userCriteria.uniqueResult();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта User", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -249,13 +245,13 @@ public class HibernateUserDAO implements UserDAO {
       session.update(user);
       session.getTransaction().commit();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
       }
     }
-    
+
   }
 
 }

@@ -3,8 +3,6 @@ package com.epam.chat.dao.jdbc.hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
@@ -26,8 +24,8 @@ public class HibernateMessageDAO implements MessageDAO {
       session.save(message);
       session.getTransaction().commit();
     } catch (Exception e) {
-      // e.printStackTrace();
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке объекта Message", JOptionPane.OK_OPTION);
+      e.printStackTrace();
+
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
@@ -44,7 +42,7 @@ public class HibernateMessageDAO implements MessageDAO {
       session = HibernateUtil.getSessionFactory().openSession();
       messages = session.createCriteria(ChatMessage.class).list();
     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка вывода всх пользователей", JOptionPane.OK_OPTION);
+      e.printStackTrace();
     } finally {
       if (session != null && session.isOpen()) {
 	session.close();
