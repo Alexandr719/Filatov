@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	
-	
-	
+
+
+		
 	$('#exit_buttom').click(function() {
 		pressExitButton();
 

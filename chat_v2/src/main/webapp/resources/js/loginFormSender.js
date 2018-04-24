@@ -4,32 +4,37 @@ $(document).ready(function () {
 
 	
 	$( ".form_submit" ).submit(function( event ) {
-		alert("hello3");
+		alert("hello51");
 		
 		
 	//	$.post( "registration_user2" );
 		event.preventDefault();
 		
-		  event.preventDefault();
+		
+		  var formData = new FormData(this);
+//		  var object = {};
 		  
-		  var dataFromForm = new FormData(this);
-		  var object = {};
+		  
+		  console.log(formData);		
+//		 
+//	  dataFromForm.forEach(function(value, key){
+//		    object[key] = value;
+//		});
+//		  
+//			  
+//		  
+//		var formData = JSON.stringify(object);
+//		alert(formData);
 		
 		 
-	  dataFromForm.forEach(function(value, key){
-		    object[key] = value;
-		});
-		  
-			  
-		  
-		var formData = JSON.stringify(object);
-		alert(formData);
-		
-	
 		  $.ajax({
 			type:$(this).attr('method'),
 			url:$(this).attr('action'),
-			data: ({formData: formData}) ,
+			data:new FormData(this) ,
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			cache: false,
 			
 		
 			success:function(result){

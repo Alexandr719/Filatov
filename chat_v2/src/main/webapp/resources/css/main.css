@@ -240,6 +240,21 @@ header  {
 }
 
 
+.message_login{
+    position: relative;
+    top: 35px;
+    left: -20;
+    font-size: 12px;
+	 display:none; 
+   
+}
+
+.message_item img:hover ~.message_login {
+	
+	display:block;
+	
+}
+
 
 
 

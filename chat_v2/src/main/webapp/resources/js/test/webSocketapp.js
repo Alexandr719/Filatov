@@ -2,23 +2,25 @@ var stompClient = null;
 connect();
 
 
-function insetIntoHtml(messageText, messageTime,pathToPhoto)	{
+function insetIntoHtml(messageText, messageTime,pathToPhoto,messageLogin)	{
 
 	var message_item = $('<div class="message_item"></div>');
 	var message_image = $('<img alt="изображение профиля">');
 	var message_text =  $('<div class="message_text">');
 	var message_time = $('<span class="message_time">');
+	var message_login = $('<span class="message_login">');
 	
 	message_image.attr("src",pathToPhoto);
 	
-	
+	message_login.text(messageLogin);
 	message_text.text(messageText);
 	message_time.text(messageTime.getHours() + ':' 
 			+  messageTime.getMinutes() + ':' 
 			+  messageTime.getSeconds());
-	
+
 	message_text.append(message_time);
 	message_item.append(message_image) ;
+	message_item.append(message_login);
 	message_item.append(message_text);
 	$(".content_messageList").append(message_item);
    
@@ -58,9 +60,9 @@ function showGreeting(message) {
 	var textMessage = message.textMessage;
 	var timeStampMessage = message.timeStamp;
 	var timeStamp = new Date(timeStampMessage);
+	var messageLogin = message.user.login;
 	
-	
-	insetIntoHtml(textMessage,timeStamp,pathToPhoto);
+	insetIntoHtml(textMessage,timeStamp,pathToPhoto,messageLogin);
 	
 	
 	

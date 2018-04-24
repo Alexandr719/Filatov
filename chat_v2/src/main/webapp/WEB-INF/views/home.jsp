@@ -59,7 +59,7 @@
 			
 				
 			
-				<input id="regButton" type="button"
+				<input id="regButton" type="submit"
 				value="Get started">
 				
 				
@@ -96,12 +96,16 @@
 					
 				<c:forEach var="item" items="${dao.getMessageDAO().getLast(0)}">
 				  <div class="message_item">
+				
 					<img src="<c:url value="${item.getUser().getPathToFoto()}" />"
+					
 						alt="изображение профиля">
+					<span class="message_login">${item.getUser().getLogin()}</span>
 					<div class="message_text">${item.getTextMessage()} 
 					<span class="message_time">${item.getTimeHourMinSec()}</span>
 
 					</div>
+				
 				</div>
 
 				</c:forEach>

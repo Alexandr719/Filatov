@@ -52,11 +52,8 @@ public class LoginController {
 
   @RequestMapping(value = "/login_user", method = RequestMethod.POST, produces = "text/html")
   @ResponseBody
-  public String loginUser(@RequestParam("formData") String loginData, User user, ModelMap model) throws IOException {
+  public String loginUser(User user, ModelMap model) throws IOException {
     String loginResult = "error";
-
-    ObjectMapper objectMapper = new ObjectMapper();
-    user = objectMapper.readValue(loginData, User.class);
 
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
@@ -70,6 +67,8 @@ public class LoginController {
     }
     return loginResult;
   }
+  
+  
 
   @RequestMapping(value = "/registration_user", method = RequestMethod.POST, produces = "text/html")
   @ResponseBody
