@@ -111,11 +111,7 @@
 				</c:forEach>
 					<p id="response"></p>
 					
-					
-
-
-
-			</div>
+					</div>
 			
 			
 			
@@ -126,7 +122,7 @@
 			
 			</div>
 			         
-           <img src="<c:url value="resources/images/downarrow_abajo_5819.png" />"  id="buttonScrollPage"      alt="DownPage">
+           <img src="<c:url value="resources/images/downarrow_abajo_5819.png" />"  id="buttonScrollPage"  alt="DownPage">
 		
 		</div>
 		

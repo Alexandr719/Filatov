@@ -24,7 +24,7 @@ public class ProxyController extends HttpServlet {
   @Override
   @RequestMapping(value = "/files/**", method = RequestMethod.GET)
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    response.setContentType("image/jpeg");
+    //response.setContentType("image/jpeg");
     File fileSaveDir = new File(DEFAULTIMAGE + request.getRequestURI());
 
     byte[] bytes = Files.readAllBytes(fileSaveDir.toPath());

@@ -1,10 +1,12 @@
 package com.epam.chat.elements;
 
-import org.springframework.context.annotation.Lazy;
+
 import org.springframework.stereotype.Component;
 
+import lombok.Data;
+
 @Component
-@Lazy
+@Data
 public class MessageAction {
   private int idAction;
   private String nameAction;
@@ -21,28 +23,5 @@ public class MessageAction {
     this.desctiptionAction = desctiptionAction;
   }
 
-  public String getNameAction() {
-    return nameAction;
-  }
-
-  public void setNameAction(String nameAction) {
-    this.nameAction = nameAction;
-  }
-
-  public String getDesctiptionAction() {
-    return desctiptionAction;
-  }
-
-  public void setDesctiptionAction(String desctiptionAction) {
-    this.desctiptionAction = desctiptionAction;
-  }
-
-  public int getIdAction() {
-    return idAction;
-  }
-
-  public void setIdAction(int idAction) {
-    this.idAction = idAction;
-  }
-
+ 
 }

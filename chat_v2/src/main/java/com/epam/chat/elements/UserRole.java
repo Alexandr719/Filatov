@@ -1,12 +1,15 @@
 package com.epam.chat.elements;
 
-import org.springframework.context.annotation.Lazy;
+
 import org.springframework.stereotype.Component;
 
+import lombok.Data;
+
 @Component
-@Lazy
+@Data
 public class UserRole {
 
+  
   private int idRole;
   private String nameRole;
   private String descriptionRole;
@@ -22,28 +25,6 @@ public class UserRole {
     // TODO Auto-generated constructor stub
   }
 
-  public int getIdRole() {
-    return idRole;
-  }
-
-  public void setIdRole(int idRole) {
-    this.idRole = idRole;
-  }
-
-  public String getNameRole() {
-    return nameRole;
-  }
-
-  public void setNameRole(String nameRole) {
-    this.nameRole = nameRole;
-  }
-
-  public String getDescriptionRole() {
-    return descriptionRole;
-  }
-
-  public void setDescriptionRole(String descriptionRole) {
-    this.descriptionRole = descriptionRole;
-  }
+ 
 
 }

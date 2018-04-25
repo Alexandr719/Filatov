@@ -1,11 +1,15 @@
 package com.epam.chat.elements;
 
-import org.springframework.context.annotation.Lazy;
+
 import org.springframework.stereotype.Component;
 
+import lombok.Data;
+
 @Component
-@Lazy
+@Data
 public class UserStatus {
+
+  
 
   private int idStatus;
   private String nameStatus;
@@ -15,18 +19,6 @@ public class UserStatus {
     // TODO Auto-generated constructor stub
   }
 
-  public String getNameStatus() {
-    return nameStatus;
-  }
-
-  public void setNameStatus(String nameStatus) {
-    this.nameStatus = nameStatus;
-  }
-
-  public String getDescriptionStatus() {
-    return descriptionStatus;
-  }
-
   public UserStatus(int idStatus, String nameStatus, String descriptionStatus) {
     super();
     this.nameStatus = nameStatus;
@@ -34,15 +26,4 @@ public class UserStatus {
     this.idStatus = idStatus;
   }
 
-  public void setDescriptionStatus(String descriptionStatus) {
-    this.descriptionStatus = descriptionStatus;
-  }
-
-  public int getIdStatus() {
-    return idStatus;
-  }
-
-  public void setIdStatus(int idStatus) {
-    this.idStatus = idStatus;
-  }
 }
