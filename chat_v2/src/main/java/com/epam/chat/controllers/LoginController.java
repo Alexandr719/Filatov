@@ -17,6 +17,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.epam.chat.dao.*;
+import com.epam.chat.elements.TestElement;
 import com.epam.chat.elements.User;
 import com.epam.chat.handler.FileUploader;
 
@@ -93,16 +94,13 @@ public class LoginController {
 
   }
   
-  @RequestMapping(value = "/checkSession", method = RequestMethod.POST, produces = "text/html")
+  @RequestMapping(value = "/checkSession", method = RequestMethod.POST)
   @ResponseBody
-  public String checkSession(ModelMap model) throws JsonGenerationException, JsonMappingException, IOException {
+  public User checkSession(ModelMap model) throws JsonGenerationException, JsonMappingException, IOException {
 
     User sessionUser = (User) model.get("sessionUser");
-    ObjectMapper mapper = new ObjectMapper();
-    String jsonInString = mapper.writeValueAsString(sessionUser);
-    
   
-    return jsonInString;
+   return sessionUser;
   }
   
   

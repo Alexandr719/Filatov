@@ -3,10 +3,10 @@ $(document).ready(function() {
 
 	var user;
 
+	
 	$.post("checkSession", function(data) {
-		
-		data = JSON.parse(data);
-		if (data != null) {
+	
+		if (data.login != null) {
 			
 			user = data;
 			showMainClass();
