@@ -9,7 +9,7 @@ $(document).ready(function() {
 		if (data.login != null) {
 			
 			user = data;
-			showMainClass();
+			showMainClass(user);
 			
 		
 			if (user.userRole.nameRole == "ADMIN") {

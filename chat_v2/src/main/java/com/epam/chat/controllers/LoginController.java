@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
+import org.hibernate.metamodel.source.binder.SubclassEntitySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.epam.chat.dao.*;
 import com.epam.chat.elements.User;
+import com.epam.chat.elements.UserStatus;
 import com.epam.chat.handler.FileUploader;
 
 @Controller
@@ -43,8 +45,19 @@ public class LoginController {
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
 
+   
+    
+    
     if (userDAO.checkLogIn(user)) {
       user = userDAO.getUserByNick(user.getLogin());
+      System.out.println(user.getUserStatus().getIdStatus());
+      if(user.getUserStatus().getIdStatus() != 3) {  //если пользователь не забанен
+	 UserStatus status = new UserStatus(1, "ONLINE", "Пользователь в сети");
+	 user.setUserStatus(status);
+	 userDAO.updateUser(user);
+	 }
+      
+      
       loginResult = "success";
       model.addAttribute("sessionUser", user);
     } else {
@@ -99,31 +112,39 @@ public class LoginController {
   public User checkSession(ModelMap model) throws JsonGenerationException, JsonMappingException, IOException {
 
     User sessionUser = (User) model.get("sessionUser");
-
-    if (sessionUser != null) {
-      DAOFactory dao = DAOFactory.getDAOFactory();
-      UserDAO userDAO = dao.getUserDAO();
-      return userDAO.getUserByNick(sessionUser.getLogin());
+    
+    if(sessionUser !=  null) {
+      	 DAOFactory dao = DAOFactory.getDAOFactory();
+         UserDAO userDAO = dao.getUserDAO();
+         return userDAO.getUserByNick(sessionUser.getLogin());
     }
-
+    
     return sessionUser;
   }
-
+  
   @RequestMapping(value = "/banned", method = RequestMethod.POST)
   @ResponseBody
   public void banUser(User user) {
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
-
+   
+    
     User bannedUser = userDAO.getUserByNick(user.getLogin());
-    if (bannedUser.getUserStatus().getIdStatus() != 3) {
-
-      userDAO.kick(bannedUser);
-    } else {
-
+    if(bannedUser.getUserStatus().getIdStatus() != 3) {
+      
+       userDAO.kick(bannedUser);
+    }else {
+     
       userDAO.unkick(bannedUser);
     }
-
+    
+    
+   
+   
   }
+  
+  
+  
+  
 
 }

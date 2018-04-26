@@ -1,4 +1,4 @@
-function showMainClass() {
+function showMainClass(user) {
 	  $('#form').hide();
 	  $('#main').show();
 	  $('.userInfo').hide();
@@ -6,7 +6,7 @@ function showMainClass() {
 	  $("#content_messageList").scrollTop($('#content_messageList').prop('scrollHeight'));
 	   
 	
-
+	  console.log(user);
 	  
 	 
 	  
