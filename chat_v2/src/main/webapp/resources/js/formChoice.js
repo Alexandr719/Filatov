@@ -10,6 +10,7 @@ $(document).ready(function() {
 			
 			user = data;
 			showMainClass();
+			
 		
 			if (user.userRole.nameRole == "ADMIN") {
 				showAdminButtons();
@@ -55,10 +56,17 @@ $(document).ready(function() {
 		});
 	
 	
+	$('.adminButton').click(function(){
 	
+		alert("Button click");
+		var banUser   = { "login": $(this).parent().parent().children(".user_name").text() };
+		$.post( "banned",banUser );
+		
+		
+		
+		
 	
-	
-	
+	});
 	
 	
 	

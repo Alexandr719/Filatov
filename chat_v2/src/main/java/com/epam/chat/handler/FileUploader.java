@@ -15,7 +15,6 @@ public class FileUploader {
   public static final String RELATIVEPATH = "files";
 
   public boolean downloadFile(User user, MultipartFile file) {
-    System.out.println("Работает новый метод");
     String fileName = null;
     boolean result = false;
 

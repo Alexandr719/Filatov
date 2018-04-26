@@ -1,5 +1,4 @@
 	$( ".form_submit" ).submit(function( event ) {
-	
 		
 			event.preventDefault();
 		

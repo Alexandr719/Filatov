@@ -133,8 +133,9 @@ public class HibernateUserDAO implements UserDAO {
 
   @Override
   public void logout(User logoutingUser) {
-
-    if (logoutingUser.getUserStatus().getIdStatus() != 3) {
+    User logoutUser = getUserByNick(logoutingUser.getLogin());
+   
+    if (logoutUser.getUserStatus().getIdStatus() != 3) {
       UserStatus status = new UserStatus(2, "OFFLINE", "Пользователь не в сети");
       logoutingUser.setUserStatus(status);
     }

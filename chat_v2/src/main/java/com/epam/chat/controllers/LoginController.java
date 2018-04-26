@@ -102,8 +102,39 @@ public class LoginController {
   public User checkSession(ModelMap model) throws JsonGenerationException, JsonMappingException, IOException {
 
     User sessionUser = (User) model.get("sessionUser");
-
+    
+    if(sessionUser !=  null) {
+      	 DAOFactory dao = DAOFactory.getDAOFactory();
+         UserDAO userDAO = dao.getUserDAO();
+         return userDAO.getUserByNick(sessionUser.getLogin());
+    }
+    
     return sessionUser;
   }
+  
+  @RequestMapping(value = "/banned", method = RequestMethod.POST)
+  @ResponseBody
+  public void banUser(User user) {
+    DAOFactory dao = DAOFactory.getDAOFactory();
+    UserDAO userDAO = dao.getUserDAO();
+   
+    
+    User bannedUser = userDAO.getUserByNick(user.getLogin());
+    if(bannedUser.getUserStatus().getIdStatus() != 3) {
+      
+       userDAO.kick(bannedUser);
+    }else {
+     
+      userDAO.unkick(bannedUser);
+    }
+    
+    
+   
+   
+  }
+  
+  
+  
+  
 
 }

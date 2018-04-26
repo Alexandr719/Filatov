@@ -158,7 +158,7 @@
 							<span>Email: ${item.getEmail()}</span>
 
 						</div>
-						<button class="adminButton">BANNED</button>
+						<button class="adminButton">Ban/Ban off</button>
 
 					</div>
 
