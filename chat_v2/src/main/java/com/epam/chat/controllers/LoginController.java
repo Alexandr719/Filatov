@@ -3,9 +3,10 @@ package com.epam.chat.controllers;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.epam.chat.dao.*;
-import com.epam.chat.elements.TestElement;
 import com.epam.chat.elements.User;
 import com.epam.chat.handler.FileUploader;
 
@@ -37,12 +37,15 @@ public class LoginController {
 
   @RequestMapping(value = "/login_user", method = RequestMethod.POST, produces = "text/html")
   @ResponseBody
-  public String loginUser(User user, ModelMap model) throws IOException {
+  public String loginUser(User user, ModelMap model, HttpServletResponse response) throws IOException {
     String loginResult = "error";
 
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
 
+   
+    
+    
     if (userDAO.checkLogIn(user)) {
       user = userDAO.getUserByNick(user.getLogin());
       loginResult = "success";
@@ -93,33 +96,14 @@ public class LoginController {
     sessionStatus.setComplete();
 
   }
-  
+
   @RequestMapping(value = "/checkSession", method = RequestMethod.POST)
   @ResponseBody
   public User checkSession(ModelMap model) throws JsonGenerationException, JsonMappingException, IOException {
 
     User sessionUser = (User) model.get("sessionUser");
-  
-   return sessionUser;
+
+    return sessionUser;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
 }

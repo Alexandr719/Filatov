@@ -20,8 +20,7 @@ $(document).ready(function() {
 				$("#messageSenderId").prop("disabled", true); 
 			}
 			
-			
-
+		
 		} else {
 			showRegistrationClass();
 		}

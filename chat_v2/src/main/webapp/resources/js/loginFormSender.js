@@ -29,7 +29,7 @@
 					$( "#errorLoginForm").css( "display", "block" );
 				} 
 				else{
-					alert("error");
+					alert(result);
 				}
 				
 				

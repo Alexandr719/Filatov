@@ -4,6 +4,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.epam.chat.dao.DAOFactory;
 import com.epam.chat.dao.MessageDAO;
 import com.epam.chat.dao.UserDAO;
@@ -17,6 +19,7 @@ public class MessageController {
 
   @MessageMapping("/messages")
   @SendTo("/topic/greetings")
+  @ResponseBody
   public Greeting greeting(ChatMessage message, User user) throws Exception {
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
