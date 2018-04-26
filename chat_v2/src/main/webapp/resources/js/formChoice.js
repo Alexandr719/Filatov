@@ -50,9 +50,7 @@ $(document).ready(function() {
 				
 		}else{
 			$('#buttonScrollPage').hide();
-			
-					
-		}
+				}
 		});
 	
 	
@@ -62,10 +60,6 @@ $(document).ready(function() {
 		var banUser   = { "login": $(this).parent().parent().children(".user_name").text() };
 		$.post( "banned",banUser );
 		
-		
-		
-		
-	
 	});
 	
 	
