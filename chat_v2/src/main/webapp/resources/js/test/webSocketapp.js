@@ -33,7 +33,8 @@ function connect() {
 	stompClient = Stomp.over(socket);
 	stompClient.connect({}, function(frame) {
 		    stompClient.subscribe('/topic/greetings', function(greeting) {
-			showGreeting(JSON.parse(greeting.body).content);
+		      	
+			showGreeting(JSON.parse(greeting.body));
 		});
 	});
 }
@@ -52,23 +53,15 @@ function sendMessage() {
 }
 
 function showGreeting(message) {
-	
+		
 
-	message = JSON.parse(message);
 	var pathToPhoto = message.user.pathToFoto;
-
-
-	var textMessage = message.textMessage;
+    var textMessage = message.textMessage;
 	var timeStampMessage = message.timeStamp;
 	var timeStamp = new Date(timeStampMessage);
 	var messageLogin = message.user.login;
 	
 	insetIntoHtml(textMessage,timeStamp,pathToPhoto,messageLogin);
-	
-	
-	
-	
-	
 
 
 	
