@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
-import org.hibernate.metamodel.source.binder.SubclassEntitySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,11 +36,10 @@ public class LoginController {
     return new ModelAndView("home", "dao", dao);
   }
 
-  @RequestMapping(value = "/login_user", method = RequestMethod.POST, produces = "text/html")
+  @RequestMapping(value = "/login_user", method = RequestMethod.POST)
   @ResponseBody
-  public String loginUser(User user, ModelMap model, HttpServletResponse response) throws IOException {
-    String loginResult = "error";
-
+  public User loginUser(User user, ModelMap model, HttpServletResponse response) throws IOException {
+    UserStatus status = null;
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
 
@@ -52,36 +50,39 @@ public class LoginController {
       user = userDAO.getUserByNick(user.getLogin());
       System.out.println(user.getUserStatus().getIdStatus());
       if(user.getUserStatus().getIdStatus() != 3) {  //если пользователь не забанен
-	 UserStatus status = new UserStatus(1, "ONLINE", "Пользователь в сети");
+	 status = new UserStatus(1, "ONLINE", "Пользователь в сети");
 	 user.setUserStatus(status);
 	 userDAO.updateUser(user);
 	 }
       
-      
-      loginResult = "success";
+     
       model.addAttribute("sessionUser", user);
     } else {
-      loginResult = "invalidUserOrPassword";
+      status = new UserStatus(4, "InvalidLoginOrPassword", "Неправильный логин или пароль");
+      user.setUserStatus(status);
+     
     }
-    return loginResult;
+    return user;
   }
 
-  @RequestMapping(value = "/registration_user", method = RequestMethod.POST, produces = "text/html")
+  @RequestMapping(value = "/registration_user", method = RequestMethod.POST)
   @ResponseBody
-  public String registrationUser(@RequestParam("photo") MultipartFile file, User user, ModelMap model)
+  public User registrationUser(@RequestParam("photo") MultipartFile file, User user, ModelMap model)
       throws IOException {
-    String registrationResult;
+    
 
-    System.out.println(file.getOriginalFilename());
+   
     DAOFactory dao = DAOFactory.getDAOFactory();
     UserDAO userDAO = dao.getUserDAO();
     if (userDAO.isLogged(user)) {
-      registrationResult = "invalidUser";
+      UserStatus status = new UserStatus(5, "InvalidUser", "Неправильный логин или пароль");
+      user.setUserStatus(status);
+      
 
     } else {
       user.setPathToFoto(DEFAULTIMAGE);
       userDAO.login(user);
-      registrationResult = "success";
+   
       model.addAttribute("sessionUser", user);
 
       FileUploader uploader = new FileUploader();
@@ -91,7 +92,7 @@ public class LoginController {
 	userDAO.updateUser(user);
       }
     }
-    return registrationResult;
+    return user;
 
   }
 
@@ -142,6 +143,8 @@ public class LoginController {
    
    
   }
+  
+  
   
   
   

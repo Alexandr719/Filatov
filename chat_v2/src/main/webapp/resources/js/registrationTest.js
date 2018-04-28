@@ -6,7 +6,7 @@ function showMainClass(user) {
 	  $("#content_messageList").scrollTop($('#content_messageList').prop('scrollHeight'));
 	   
 	
-	  console.log(user);
+	
 	  
 	 
 	  
@@ -31,8 +31,7 @@ function showMainClass(user) {
 
 		});
 	  
-	  
-
+	
 	  
 }
 

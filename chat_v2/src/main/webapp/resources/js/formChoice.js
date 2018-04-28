@@ -2,6 +2,12 @@ $(document).ready(function() {
 
 
 	var user;
+	
+	
+	
+	
+
+	
 
 	
 	$.post("checkSession", function(data) {

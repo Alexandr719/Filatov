@@ -14,21 +14,20 @@
 			cache: false,
 			
 		
-			success:function(result){
+			success:function(user){
 				
-				if(result == "success"){
-				   location.reload();
-				
-				}else if(result == "invalidUserOrPassword") {
+			 if(user.userStatus.nameStatus == "InvalidLoginOrPassword") {
 					$( "#errorLoginForm").text("Wrong password or login");
 					$( "#errorLoginForm").css( "display", "block" );
 								
-				}else if(result == "invalidUser"){
+				}else if(user.userStatus.nameStatus == "InvalidUser"){
 					$( "#errorLoginForm").text("User with such login exists");
 					$( "#errorLoginForm").css( "display", "block" );
-				} 
+				}			 
+			
 				else{
-					alert(result);
+					addUser(user);
+					location.reload();
 				}
 				
 				
