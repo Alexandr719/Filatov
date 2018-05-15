@@ -142,6 +142,7 @@
 				<div class="user_id">
 					<span class="user_name">${item.getLogin()}</span>
 					<div class="online_ball"></div>
+					<span class="userStatisName">${item.getUserStatus().getNameStatus()} </span>
 
 					<div class="userInfo">
 

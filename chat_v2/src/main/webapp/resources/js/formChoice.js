@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
-
+	
+	
+	
+	
+	
 	var user;
 	
 	
-	
-	
-
-	
+		
 
 	
 	$.post("checkSession", function(data) {
@@ -70,7 +71,20 @@ $(document).ready(function() {
 	
 	
 	
+	 $('.user_id').each(function (index, element) {
+		 
+			
+		
+		if($(element).children(".userStatisName").text().trim() == "ONLINE"){
+			 $(element).children(".online_ball").css( "background-color", "#59ff6f");
+			
+		}
+		
+		
+		  });
 	
+	
+	 
 	
 
 });
